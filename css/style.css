@@ -1,0 +1,265 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 4px;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+
+html { 
+  background: url(./img/large-landscape-bgnd.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/*
+body {
+  background: #373737 url("../img/bg.png") 0 0 repeat;
+}
+*/
+
+body {
+  font: 12px/16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #a8a7a8;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+}
+
+a {
+  color: #00a1d2;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+input, button, label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type=text], input[type=password], input[type=number] {
+  padding: 3px 10px;
+  width: 100px;
+  height: 26px;
+  color: #bbb;
+  text-shadow: 1px 1px 1px black;
+  background: rgba(0, 0, 0, 0.16);
+  border: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+}
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  outline: 0;
+}
+
+label {
+  float: left;
+  width: 100px;
+  line-height: 40px;
+  padding-right: 10px;
+  font-weight: 100;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
+  line-height: 40px;
+  background: #282828;
+}
+
+
+
+
+
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * View the Sass/SCSS source at:
+ * http://www.cssflow.com/snippets/dark-and-light-ExpenseFrequencyCombo-lists/demo/scss
+ *
+ * Original PSD by Hemn Chawroka: http://goo.gl/nXZHJ
+ */
+
+
+/*
+@import url(http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
+*/
+
+
+
+.ExpenseFrequencyCombo {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 28px;
+  width: 150px;
+  border: 1px solid;
+  border-radius: 3px;
+  background: #444;
+  border-color: #111111 #0a0a0a black;
+  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ExpenseFrequencyCombo:before, .ExpenseFrequencyCombo:after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 9px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 4px dashed;
+  border-color: #888888 transparent;
+  pointer-events: none;
+}
+
+.ExpenseFrequencyCombo:before {
+  border-bottom-style: solid;
+  border-top: none;
+  border-bottom-color: #aaa;
+}
+
+.ExpenseFrequencyCombo:after {
+  margin-top: 7px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-top-color: #aaa;
+}
+
+.ExpenseFrequencyCombo {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  padding: 6px 8px 6px 10px;
+  height: 28px;
+  line-height: 14px;
+  font-size: 12px;
+  color: #aaa;
+  text-shadow: 0 1px black;
+  background: #444;  /* Fallback for IE 8 */
+  background: rgba(0, 0, 0, 0.06) !important; /* "transparent" doesn't work with Opera */
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.ExpenseFrequencyCombo:focus {
+  z-index: 3;
+  width: 100%;
+  color: #ccc;
+  outline: 2px solid #49aff2;
+  outline: 2px solid -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.ExpenseFrequencyCombo > option {
+  margin: 3px;
+  padding: 6px 8px;
+  text-shadow: none;
+  background: #444;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+
+/* Fix for IE 8 putting the arrows behind the select element. */
+
+.lt-ie9 .ExpenseFrequencyCombo {
+  z-index: 1;
+}
+
+.lt-ie9 .ExpenseFrequencyCombo {
+  z-index: -1;
+}
+
+.lt-ie9 .ExpenseFrequencyCombo:focus {
+  z-index: 3;
+}
+
+/* Dirty fix for Firefox adding padding where it shouldn't. */
+
+@-moz-document url-prefix() {
+  .ExpenseFrequencyCombo {
+    padding-left: 6px;
+  }
+}
+
+

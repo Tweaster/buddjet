@@ -1,0 +1,270 @@
+
+<!--
+
+  TODO uncomment for IPAGE
+<?php
+   include('session.php');
+?>
+-->
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<title>Buddjet Demo Page</title>
+<style type="text/css">
+<!--
+
+
+/* ~~ This fixed width container surrounds all other divs ~~ */
+.container {
+	width: 100%;
+	background-color: #1D1D1D;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+
+
+
+-->
+</style>
+
+
+<!-- stylesheet -->
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+<link rel="stylesheet" type="text/css" href="css/style-dev.css" />
+
+<!-- external scripts -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="js/modal.js"></script>
+
+
+<script src="js/amcharts/amcharts.js"></script>
+<script src="js/amcharts/pie.js"></script>
+<script src="js/amcharts/serial.js"></script>
+<script src="js/amcharts/themes/dark.js"></script>
+
+
+<script src="js/sjcl.js"></script>
+
+<script src="js/buddjet.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+
+    $(document).ready(
+
+      function ()
+      {
+
+
+
+        if (typeof(Storage) !== "undefined") 
+        {
+
+            var session = sessionStorage.getItem(app_id + ".session");
+
+            // if we already have a valid session
+            // then redirect to app page
+            if (session == null || typeof(session) == "undefined")
+            {
+              window.location.href = "login.html";
+            }
+
+        }
+        else 
+        {
+          // TODO redirect to error page
+          // write access to local storage denied to application
+          //alert('FATAL ERROR: ACCESS DENIED TO LOCAL STORAGE');
+          window.location.href = "error/error.html";
+        } 
+
+        buddjetStart();
+      }
+    );
+
+</script>
+  
+  
+<div data-role="page" data-theme="b">
+         
+    
+<div class="container ui-screen-hidden">
+
+
+  <div id="sidebar1">
+
+    <ul>
+      <a href="#" class="ui-sidebar-entry" id="a-home-sidebar-entry"><li class="ui-sidebar-entry" id="home-sidebar-entry">All Categories</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-income-sidebar-entry"><li class="ui-sidebar-entry" id="income-sidebar-entry">Income</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-housing-sidebar-entry"><li class="ui-sidebar-entry" id="housing-sidebar-entry">Housing</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-transportation-sidebar-entry"><li class="ui-sidebar-entry" id="transportation-sidebar-entry">Transportation</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-medical-sidebar-entry"><li class="ui-sidebar-entry" id="medical-sidebar-entry">Medical</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-utilities-sidebar-entry"><li class="ui-sidebar-entry" id="utilities-sidebar-entry">Utilities</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-personal-sidebar-entry"><li class="ui-sidebar-entry" id="personal-sidebar-entry">Personal</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-entertainment-sidebar-entry"><li class="ui-sidebar-entry" id="entertainment-sidebar-entry">Entertainment</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-household-sidebar-entry"><li class="ui-sidebar-entry" id="household-sidebar-entry">Household</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-giving-sidebar-entry"><li class="ui-sidebar-entry" id="giving-sidebar-entry">Giving</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-pets-sidebar-entry"><li class="ui-sidebar-entry" id="pets-sidebar-entry">Pets</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-insurance-sidebar-entry"><li class="ui-sidebar-entry" id="insurance-sidebar-entry">Insurance</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-taxes-sidebar-entry"><li class="ui-sidebar-entry" id="taxes-sidebar-entry">Taxes</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-debt-sidebar-entry"><li class="ui-sidebar-entry" id="debt-sidebar-entry">Debt Reduction</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-education-sidebar-entry"><li class="ui-sidebar-entry" id="education-sidebar-entry">Education</li></a>
+      <a href="#" class="ui-sidebar-entry" id="a-savings-sidebar-entry"><li class="ui-sidebar-entry" id="savings-sidebar-entry">Savings</li></a>
+    </ul>
+
+    <!-- end .sidebar1 -->
+  </div>
+    
+    <div id="middlecolumn">
+ 
+        <div data-role="content" class="content">
+
+          <div class="global-data-no-ui" id="current-context">all</div>
+
+          <div id="ui-switch-container"> 
+
+            <select id="ui-board-select" onchange="boardSelectionChange()">  
+              <option value="prevision">Budget Prevision</option>
+              <option value="0" selected>Current month</option>
+              <option value="1">Last month</option>
+            </select>
+            
+           </div>
+
+           <div id="ui-chart-switch-container">
+              <input type="checkbox" class="check" id="one" name="check_one" checked/>
+              <label for="one" class="ui-switch-label">
+                <div id="thumb" class="metal radial"></div>
+              </label>
+            </div>
+
+          <ul data-role="listview" data-filter="true" data-inset="true" class="expenses-list">
+
+              <li data-role="list-divider" class="housing category-housing">Housing</li>
+              <li class="category-housing"><hr></li>
+              <li class="ui-expense-li category-housing ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden housing-monthly-total">0$</div><div class="ui-yearly-amount-hidden housing-yearly-total">0$</div><div class="ui-current-amount housing-current-total">0$</div><div class="ui-current-percentage housing-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="transportation category-transportation">Transportation</li>
+              <li class="category-transportation"><hr></li>
+              <li class="ui-expense-li category-transportation ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden transportation-monthly-total">0$</div><div class="ui-yearly-amount-hidden transportation-yearly-total">0$</div><div class="ui-current-amount transportation-current-total">0$</div><div class="ui-current-percentage transportation-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="medical category-medical">Medical</li>
+              <li class="category-medical"><hr></li>
+              <li class="ui-expense-li category-medical ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden medical-monthly-total">0$</div><div class="ui-yearly-amount-hidden medical-yearly-total">0$</div><div class="ui-current-amount medical-current-total">0$</div><div class="ui-current-percentage medical-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="utilities category-utilities">Utilities</li>
+              <li class="category-utilities"><hr></li>
+              <li class="ui-expense-li category-utilities ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden utilities-monthly-total">0$</div><div class="ui-yearly-amount-hidden utilities-yearly-total">0$</div><div class="ui-current-amount utilities-current-total">0$</div><div class="ui-current-percentage utilities-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="personal category-personal">Personal</li>
+              <li class="category-personal"><hr></li>
+              <li class="ui-expense-li category-personal ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden personal-monthly-total">0$</div><div class="ui-yearly-amount-hidden personal-yearly-total">0$</div><div class="ui-current-amount personal-current-total">0$</div><div class="ui-current-percentage personal-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="entertainment category-entertainment">Entertainment</li>
+              <li class="category-entertainment"><hr></li>
+              <li class="ui-expense-li category-entertainment ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden entertainment-monthly-total">0$</div><div class="ui-yearly-amount-hidden entertainment-yearly-total">0$</div><div class="ui-current-amount entertainment-current-total">0$</div><div class="ui-current-percentage entertainment-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="household category-household">Household Items</li>
+              <li class="category-household"><hr></li>
+              <li class="ui-expense-li category-household ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden household-monthly-total">0$</div><div class="ui-yearly-amount-hidden household-yearly-total">0$</div><div class="ui-current-amount houshold-current-total">0$</div><div class="ui-current-percentage household-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="giving category-giving">Giving</li>
+              <li class="category-giving"><hr></li>
+              <li class="ui-expense-li category-giving ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden giving-monthly-total">0$</div><div class="ui-yearly-amount-hidden giving-yearly-total">0$</div><div class="ui-current-amount giving-current-total">0$</div><div class="ui-current-percentage giving-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="pets category-pets">Pets</li>
+              <li class="category-pets"><hr></li>
+              <li class="ui-expense-li category-pets ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden pets-monthly-total">0$</div><div class="ui-yearly-amount-hidden pets-yearly-total">0$</div><div class="ui-current-amount pets-current-total">0$</div><div class="ui-current-percentage pets-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="insurance category-insurance">Insurance</li>
+              <li class="category-insurance"><hr></li>
+              <li class="ui-expense-li category-insurance ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden insurance-monthly-total">0$</div><div class="ui-yearly-amount-hidden insurance-yearly-total">0$</div><div class="ui-current-amount insurance-current-total">0$</div><div class="ui-current-percentage insurance-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="taxes category-taxes">Taxes</li>
+              <li class="category-taxes"><hr></li>
+              <li class="ui-expense-li category-taxes ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden taxes-monthly-total">0$</div><div class="ui-yearly-amount-hidden taxes-yearly-total">0$</div><div class="ui-current-amount taxes-current-total">0$</div><div class="ui-current-percentage taxes-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="debt category-debt">Debt Reduction</li>
+              <li class="category-debt"><hr></li>
+              <li class="ui-expense-li category-debt ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden debt-monthly-total">0$</div><div class="ui-yearly-amount-hidden debt-yearly-total">0$</div><div class="ui-current-amount debt-current-total">0$</div><div class="ui-current-percentage debt-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="education category-education">Education</li>
+              <li class="category-education"><hr></li>
+              <li class="ui-expense-li category-education ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden education-monthly-total">0$</div><div class="ui-yearly-amount-hidden education-yearly-total">0$</div><div class="ui-current-amount education-current-total">0$</div><div class="ui-current-percentage education-current-percentage">0%</div></li>
+
+              <li data-role="list-divider" class="savings category-savings">Savings</li>
+              <li class="category-savings"><hr></li>
+              <li class="ui-expense-li category-savings ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden savings-monthly-total">0$</div><div class="ui-yearly-amount-hidden savings-yearly-total">0$</div><div class="ui-current-amount saving-current-total">0$</div><div class="ui-current-percentage saving-current-percentage">0%</div></li>
+
+            </ul>
+
+            <p>&nbsp;</p>
+
+            <ul data-role="listview" data-filter="true" data-inset="true" class="income-list">
+
+              <li data-role="list-divider" class="income category-income">Income</li>
+              <li class="category-income"><hr></li>
+              <li class="ui-expense-li category-income ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden income-monthly-total">0$</div><div class="ui-yearly-amount-hidden income-yearly-total">0$</div><div class="ui-current-amount income-current-total">0$</div><div class="ui-current-percentage income-current-percentage">0%</div></li>
+
+            </ul>
+
+            <div id="expense-entry-dialog" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header" id="expense-entry-dialog-header">
+                    
+                   
+                  </div>
+                  <div class="modal-body">
+                    <label id="modal-dialog-input-label">Amount to add: </label><input type="number" value="0" id="modal-dialog-input-amount">
+                    <div class="ui-screen-hidden" id="current-expense-id-for-dialog"></div>
+                    <div class="ui-screen-hidden" id="current-category-for-dialog"></div>
+                    <div class="ui-screen-hidden" id="dialog-input-type"></div>
+                  </div>
+                  <div class="modal-footer">
+                    <a class="ui-input-clear" id="validate-new-amount-modal-dialog-btn" href="#">Validate</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+      </div> <!-- div content -->
+
+    
+            
+    </div> <!-- middle column -->
+      
+
+  <div id="sidebar2" class="charts-mobile-off">
+
+   <!-- <div id="expenses-donut"></div> -->
+
+    <div id="expenses-vs-prevision-barchart"></div>
+    <div id="tendency-barchart"></div>
+
+  <!-- end .sidebar2 -->
+  </div>
+
+  
+
+  <!-- end .container -->
+</div>
+  
+  </div>  <!-- div page -->
+</body>
+  
+
+</html>

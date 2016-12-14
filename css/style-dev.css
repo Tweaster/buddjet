@@ -30,7 +30,6 @@ li.ui-sidebar-entry{
 
 a.ui-sidebar-entry {
     padding-top: 10px;
-    background: url('../img/16/16Px - 666.png') no-repeat; 
     background-position: 180px 10px;
 }
 
@@ -284,6 +283,7 @@ input[type=radio]:checked {
 
 
 #ui-board-select {
+    margin-top: 10px;
     width: 250px; 
 }
 
@@ -291,6 +291,17 @@ select#ui-board-select{
     outline-color: #900;
     outline-width: medium;
     outline-style: outset;
+}
+
+#ui-btn-settings-container {
+    width: 100%;
+    height: 40px;
+    padding-left: 90%;
+    margin-top: -30px;
+}
+
+#ui-btn-settings-container > a {
+    margin-left: -40px;
 }
 
 
@@ -480,6 +491,11 @@ label {
     text-align: left;
 }
 
+.ui-btn > span {
+    visibility: hidden;
+    display: none;
+}
+
  .ui-monthly-amount , .ui-yearly-amount{ 
     visibility: visible;   	
 	vertical-align:middle;
@@ -527,6 +543,7 @@ div[class$="-monthly-total"], div[class$="-yearly-total"] {
 /******************************************/
 
 #ui-switch-container {
+    display: inline-block;
     background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#222));
     background: -moz-gradient(linear, left top, left bottom, from(#333), to(#222));
     background: -o-gradient(linear, left top, left bottom, from(#333), to(#222));
@@ -750,7 +767,7 @@ div[class$="-monthly-total"], div[class$="-yearly-total"] {
     position: absolute;
     padding-left: 220px;
     width: 470px;
-    padding-top: 60px;
+    padding-top: 100px;
     /*background: url(./img/large-landscape-bgnd.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -997,7 +1014,7 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
 }
 .modal-body {
   position: relative;
-  padding: 10px 5px 10px 5px;
+  padding: 10px;
 }
 .modal-footer {
   padding: 10px;
@@ -1028,6 +1045,13 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
 #modal-dialog-input-amount {
     width: 100px;
 }
+
+
+
+#setting-dialog > .modal-dialog > .modal-content 
+{
+    width: 400px;
+} 
 
 
 
@@ -1062,7 +1086,7 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
     }
 
     #middlecolumn {
-        margin-top: 10px;
+        margin-top: 60px;
         padding-top: 0px;
         width: 380px;
     }
@@ -1239,6 +1263,8 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
 @media screen and (max-width: 699px) {
 
     #middlecolumn {
+        margin-top: 15px;
+        padding-top: 0px;
         padding-left: 12px;
         width: 300px;
     }

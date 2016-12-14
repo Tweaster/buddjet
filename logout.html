@@ -30,25 +30,10 @@
 
       function ()
       {
-
-
-
         if (typeof(Storage) !== "undefined") 
         {
-
-            var session = localStorage.getItem(app_id + ".logged-in-session");
-
-            // if we already have a valid session
-            // then redirect to app page
-            if (session == null || typeof(session) == "undefined")
-            {
-              window.location.href = "login.html";
-            }
-            else
-            {
-              window.location.href = "app.html";
-            }
-
+            localStorage.removeItem(app_id + ".logged-in-session");
+            window.location.href = "login.html";
         }
         else 
         {
@@ -58,7 +43,6 @@
           window.location.href = "error/error.html";
         } 
 
-        
       }
     );
 

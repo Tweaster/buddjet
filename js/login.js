@@ -54,13 +54,13 @@ function appStart()
   {
 
 
-      var session = sessionStorage.getItem(app_id + ".session");
+      var session = localStorage.getItem(app_id + ".logged-in-session");
 
       // if we already have a valid session
       // then redirect to app page
       if (session !== null && typeof(session) !== "undefined")
       {
-        window.location.href = "index.html";
+        window.location.href = "app.html";
       }
   }
   else 
@@ -94,7 +94,7 @@ function login()
 
   if (credentials !== null && typeof(credentials) !== "undefined" && sjcl.decrypt(passwd, credentials) == email)
   {
-    sessionStorage.setItem(app_id + ".session", session);
+    localStorage.setItem(app_id + ".logged-in-session", session);
   }
   else
   {
@@ -115,7 +115,7 @@ function signup()
 
   var entered_identity = sjcl.encrypt(app_id, $('input#firstname').val() + ' ' + $('input#lastname').val());
 
-  sessionStorage.setItem(app_id + '.session', session);
+  localStorage.setItem(app_id + ".logged-in-session", session);
   localStorage.setItem(app_id + "." + session + ".credentials", encryptetEmail);
   localStorage.setItem(app_id + "." + session + ".data", '');
   localStorage.setItem(app_id + "." + session + '.fullid', entered_identity);

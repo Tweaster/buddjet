@@ -3,6 +3,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="msapplication-tap-highlight" content="no" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1990 12:00:00 GMT" />
+<link rel="shortcut icon" href="img/favicon.png"/>
+
+
 <title>Buddjet Demo Page</title>
 <style type="text/css">
 <!--
@@ -21,6 +29,10 @@
 -->
 </style>
 
+<script src="js/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="css/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<ink rel="stylesheet" href="css/normalize-5.0.0.min.css">
+
 
 <!-- stylesheet -->
 <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
@@ -38,10 +50,13 @@
 <script src="js/amcharts/serial.js"></script>
 <script src="js/amcharts/themes/dark.js"></script>
 
+<script src="js/huffman-0.9.0.min.js"></script>
 
 <script src="js/sjcl.js"></script>
 
+<script src="js/globals.js"></script>
 <script src="js/buddjet.js"></script>
+
 
 
 </head>
@@ -54,8 +69,6 @@
 
       function ()
       {
-
-
 
         if (typeof(Storage) !== "undefined") 
         {
@@ -78,16 +91,22 @@
         } 
 
         buddjetStart();
+
+        injectSettingsDialogContent();
       }
     );
 
 </script>
   
+
+
   
 <div data-role="page" data-theme="b">
          
     
-<div class="container ui-screen-hidden">
+<div class="container">
+
+
 
 
   <div id="sidebar1">
@@ -120,14 +139,13 @@
 
           <div class="global-data-no-ui" id="current-context">all</div>
 
-          
+          <div class="no-internet-connection ui-screen-hidden">
+            <h3>no internet connection</h3> 
+          </div>
 
           <div id="ui-switch-container"> 
 
             <select id="ui-board-select" onchange="boardSelectionChange()">  
-              <option value="prevision">Budget Prevision</option>
-              <option value="0" selected>Current month</option>
-              <option value="1">Last month</option>
             </select>
 
             <div id="ui-btn-settings-container">
@@ -143,128 +161,15 @@
             
           </div>
 
-           
-
-
-
-          <ul data-role="listview" data-filter="true" data-inset="true" class="expenses-list">
-
-              <li data-role="list-divider" class="housing category-housing">Housing</li>
-              <li class="category-housing"><hr></li>
-              <li class="ui-expense-li category-housing ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden housing-monthly-total">0$</div><div class="ui-yearly-amount-hidden housing-yearly-total">0$</div><div class="ui-current-amount housing-current-total">0$</div><div class="ui-current-percentage housing-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="transportation category-transportation">Transportation</li>
-              <li class="category-transportation"><hr></li>
-              <li class="ui-expense-li category-transportation ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden transportation-monthly-total">0$</div><div class="ui-yearly-amount-hidden transportation-yearly-total">0$</div><div class="ui-current-amount transportation-current-total">0$</div><div class="ui-current-percentage transportation-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="medical category-medical">Medical</li>
-              <li class="category-medical"><hr></li>
-              <li class="ui-expense-li category-medical ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden medical-monthly-total">0$</div><div class="ui-yearly-amount-hidden medical-yearly-total">0$</div><div class="ui-current-amount medical-current-total">0$</div><div class="ui-current-percentage medical-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="utilities category-utilities">Utilities</li>
-              <li class="category-utilities"><hr></li>
-              <li class="ui-expense-li category-utilities ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden utilities-monthly-total">0$</div><div class="ui-yearly-amount-hidden utilities-yearly-total">0$</div><div class="ui-current-amount utilities-current-total">0$</div><div class="ui-current-percentage utilities-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="personal category-personal">Personal</li>
-              <li class="category-personal"><hr></li>
-              <li class="ui-expense-li category-personal ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden personal-monthly-total">0$</div><div class="ui-yearly-amount-hidden personal-yearly-total">0$</div><div class="ui-current-amount personal-current-total">0$</div><div class="ui-current-percentage personal-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="entertainment category-entertainment">Entertainment</li>
-              <li class="category-entertainment"><hr></li>
-              <li class="ui-expense-li category-entertainment ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden entertainment-monthly-total">0$</div><div class="ui-yearly-amount-hidden entertainment-yearly-total">0$</div><div class="ui-current-amount entertainment-current-total">0$</div><div class="ui-current-percentage entertainment-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="household category-household">Household Items</li>
-              <li class="category-household"><hr></li>
-              <li class="ui-expense-li category-household ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden household-monthly-total">0$</div><div class="ui-yearly-amount-hidden household-yearly-total">0$</div><div class="ui-current-amount houshold-current-total">0$</div><div class="ui-current-percentage household-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="giving category-giving">Giving</li>
-              <li class="category-giving"><hr></li>
-              <li class="ui-expense-li category-giving ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden giving-monthly-total">0$</div><div class="ui-yearly-amount-hidden giving-yearly-total">0$</div><div class="ui-current-amount giving-current-total">0$</div><div class="ui-current-percentage giving-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="pets category-pets">Pets</li>
-              <li class="category-pets"><hr></li>
-              <li class="ui-expense-li category-pets ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden pets-monthly-total">0$</div><div class="ui-yearly-amount-hidden pets-yearly-total">0$</div><div class="ui-current-amount pets-current-total">0$</div><div class="ui-current-percentage pets-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="insurance category-insurance">Insurance</li>
-              <li class="category-insurance"><hr></li>
-              <li class="ui-expense-li category-insurance ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden insurance-monthly-total">0$</div><div class="ui-yearly-amount-hidden insurance-yearly-total">0$</div><div class="ui-current-amount insurance-current-total">0$</div><div class="ui-current-percentage insurance-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="taxes category-taxes">Taxes</li>
-              <li class="category-taxes"><hr></li>
-              <li class="ui-expense-li category-taxes ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden taxes-monthly-total">0$</div><div class="ui-yearly-amount-hidden taxes-yearly-total">0$</div><div class="ui-current-amount taxes-current-total">0$</div><div class="ui-current-percentage taxes-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="debt category-debt">Debt Reduction</li>
-              <li class="category-debt"><hr></li>
-              <li class="ui-expense-li category-debt ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden debt-monthly-total">0$</div><div class="ui-yearly-amount-hidden debt-yearly-total">0$</div><div class="ui-current-amount debt-current-total">0$</div><div class="ui-current-percentage debt-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="education category-education">Education</li>
-              <li class="category-education"><hr></li>
-              <li class="ui-expense-li category-education ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden education-monthly-total">0$</div><div class="ui-yearly-amount-hidden education-yearly-total">0$</div><div class="ui-current-amount education-current-total">0$</div><div class="ui-current-percentage education-current-percentage">0%</div></li>
-
-              <li data-role="list-divider" class="savings category-savings">Savings</li>
-              <li class="category-savings"><hr></li>
-              <li class="ui-expense-li category-savings ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden savings-monthly-total">0$</div><div class="ui-yearly-amount-hidden savings-yearly-total">0$</div><div class="ui-current-amount saving-current-total">0$</div><div class="ui-current-percentage saving-current-percentage">0%</div></li>
-
+            <ul data-role="listview" data-filter="true" data-inset="true" class="expenses-list">
+            
             </ul>
 
             <p>&nbsp;</p>
 
             <ul data-role="listview" data-filter="true" data-inset="true" class="income-list">
 
-              <li data-role="list-divider" class="income category-income">Income</li>
-              <li class="category-income"><hr></li>
-              <li class="ui-expense-li category-income ui-li-static ui-body-inherit"><div class="ui-expense-label-less-compact"></div><div class="frequency-combo-container-hidden"></div><div class="ui-expense-amount-hidden"></div><div class="ui-monthly-amount-hidden income-monthly-total">0$</div><div class="ui-yearly-amount-hidden income-yearly-total">0$</div><div class="ui-current-amount income-current-total">0$</div><div class="ui-current-percentage income-current-percentage">0%</div></li>
-
             </ul>
-
-            <div id="expense-entry-dialog" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header" id="expense-entry-dialog-header">
-                    
-                   
-                  </div>
-                  <div class="modal-body">
-                    <div id="modal-dialog-input-label">Amount to add: </div><input type="number" value="0" id="modal-dialog-input-amount">
-                    <div class="ui-screen-hidden" id="current-expense-id-for-dialog"></div>
-                    <div class="ui-screen-hidden" id="current-category-for-dialog"></div>
-                    <div class="ui-screen-hidden" id="dialog-input-type"></div>
-                  </div>
-                  <div class="modal-footer">
-                    <a class="validate-modal-dialog" id="validate-new-amount-modal-dialog-btn" href="#">Validate</a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
-
-            <div id="setting-dialog" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header" >
-                    Settings
-                  </div>
-                  <div class="modal-body">
-
-                    <div>
-                    Logout from current session: <a class="validate-modal-dialog" href="logout.html">Logout </a>
-                    </div>
-          
-                  </div>
-                  <div class="modal-footer">
-                    <a class="validate-modal-dialog"  data-dismiss="modal" href="#">Validate</a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            
       </div> <!-- div content -->
 
     
@@ -285,9 +190,91 @@
   
 
   <!-- end .container -->
-</div>
+  </div>
   
   </div>  <!-- div page -->
+
+
+
+
+
+<div id="expense-entry-dialog" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" id="expense-entry-dialog-header">
+        
+       
+      </div>
+      <div class="modal-body">
+        <p>
+          <div id="modal-dialog-input-label">Amount to add: </div><input type="number" value="0" id="modal-dialog-input-amount">
+        </p>
+        <div class="ui-screen-hidden" id="current-expense-id-for-dialog"></div>
+        <div class="ui-screen-hidden" id="current-category-for-dialog"></div>
+        <div class="ui-screen-hidden" id="dialog-input-type"></div>
+      </div>
+      <div class="modal-footer">
+        <a class="validate-modal-dialog" id="validate-new-amount-modal-dialog-btn" href="#">Validate</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Settings modal dialog -->
+
+<div id="setting-dialog" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" >
+        Settings
+      </div>
+      <div class="modal-body" id="setting-dialog-content">
+
+        
+          
+      </div>
+
+      <div class="modal-footer">
+        <a class="validate-modal-dialog" data-dismiss="modal" href="#" id="btn-validate-settings">Validate</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Tutorial modal dialog -->
+
+<div id="tutorial-dialog" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" >
+        <button type="button" class="close" data-dismiss="modal">&times;</button>&nbsp;&nbsp;Tutorial - How to use Buddjet
+      </div>
+      <div class="modal-body" id="tutorial-dialog-content">
+
+        
+          
+      </div>
+
+      <div class="modal-footer">
+        <a class="validate-modal-dialog" data-dismiss="modal" href="#" id="btn-close-tutorial">close</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <script src="js/settings-dialog.js"></script>
+  
 </body>
   
 

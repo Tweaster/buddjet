@@ -9,6 +9,7 @@ html {
 body {
   background-color: #1a1a1a;
   font-family: 'Titillium Web', sans-serif;
+  visibility: hidden;
 }
 
 a {
@@ -20,6 +21,8 @@ a {
 a:hover {
   color: #D60026;
 }
+
+
 
 .form {
   background-color: rgb(46,46,46);
@@ -176,3 +179,5 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+
+

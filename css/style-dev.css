@@ -289,7 +289,7 @@ input[type=radio]:checked {
 
 select#ui-board-select{
     outline-color: #900;
-    outline-width: medium;
+    outline-width: thin;
     outline-style: outset;
 }
 
@@ -298,10 +298,12 @@ select#ui-board-select{
     height: 40px;
     padding-left: 90%;
     margin-top: -30px;
+    outline-width: 0px;
 }
 
 #ui-btn-settings-container > a {
     margin-left: -40px;
+    outline-width: 0px;
 }
 
 
@@ -564,6 +566,30 @@ div[class$="-monthly-total"], div[class$="-yearly-total"] {
     box-sizing:border-box;
 }
 
+.no-internet-connection {
+    display: inline-block;
+    background: rgba(200, 0, 0, 0.3);
+    z-index: 20;
+    position: fixed;
+    width: 100%;
+    top: 100%;
+    left: 0px;
+    height: 30px;
+    margin-top: -30px;
+    vertical-align: top;
+    text-align: center;
+    -webkit-font-smoothing:antialiased;
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.no-internet-connection > h3
+{
+    margin-top: 8px;
+}
+
 
 /* 1 -Hide the inputs */
 #one {
@@ -760,6 +786,7 @@ div[class$="-monthly-total"], div[class$="-yearly-total"] {
     position:fixed;
     width: 260px;
     height: 100%;
+    outline: 0;
 }
 
 
@@ -768,6 +795,7 @@ div[class$="-monthly-total"], div[class$="-yearly-total"] {
     padding-left: 220px;
     width: 470px;
     padding-top: 100px;
+    outline: 0;
     /*background: url(./img/large-landscape-bgnd.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -783,10 +811,12 @@ div[class$="-monthly-total"], div[class$="-yearly-total"] {
     margin-left: 670px;
     margin-top: -5px;
     width: 990px;
+    outline: 0;
 }
 
 .content { 
     background-color: #1a1a1a;
+    outline: 0;
 }
 
 
@@ -965,8 +995,8 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
 }
 .modal-dialog {
   position: relative;
-  width: 300px;
-  margin: 150px auto;
+  width: 330px;
+  margin: 120px auto;
 }
 .modal-content {
   position: relative;
@@ -998,10 +1028,10 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
   opacity: .75;
 }
 .modal-header {
-    background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#111));
-    background: -moz-gradient(linear, left top, left bottom, from(#333), to(#111));
-    background: -o-gradient(linear, left top, left bottom, from(#333), to(#111));
-    background: -ms-gradient(linear, left top, left bottom, from(#333), to(#111));
+    background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#1b1b1b));
+    background: -moz-gradient(linear, left top, left bottom, from(#333), to(#1b1b1b));
+    background: -o-gradient(linear, left top, left bottom, from(#333), to(#1b1b1b));
+    background: -ms-gradient(linear, left top, left bottom, from(#333), to(#1b1b1b));
   padding: 5px 15px;
   border-bottom: 1px solid #333;
 }
@@ -1013,6 +1043,7 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
   line-height: 1.42857143;
 }
 .modal-body {
+    background: #2b2b2b;
   position: relative;
   padding: 10px;
 }
@@ -1020,6 +1051,10 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
   padding: 10px;
   text-align: right;
   border-top: 1px solid #333;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2e2e2e), to(#1b1b1b));
+    background: -moz-gradient(linear, left top, left bottom, from(#2e2e2e), to(#1b1b1b));
+    background: -o-gradient(linear, left top, left bottom, from(#2e2e2e), to(#1b1b1b));
+    background: -ms-gradient(linear, left top, left bottom, from(#2e2e2e), to(#1b1b1b));
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;
@@ -1047,12 +1082,43 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
 }
 
 
-
-#setting-dialog > .modal-dialog > .modal-content 
+.TabbedPanelsTab 
 {
-    width: 400px;
+    width: 75px;
+    text-align: center;
+}
+
+
+#settings-category-combo-delete, #settings-category-combo-add, #settings-expense-combo, #settings-new-expense-input-caption, #settings-expense-input-new-caption, #settings-all-expenses-combo, #settings-category-input-new-caption, #settings-category-combo-rename, #settings-history-combo, #settings-language-combo, #settings-skin-combo
+{
+    width: 100px;
+}
+
+#btn-add-new-entry, #btn-rename-entry, #btn-rename-category, #btn-delete-entry, #btn-logout
+{
+    width: 60px;
+    text-align: center;
+}
+
+
+#tutorial-dialog > .modal-dialog {
+  position: relative;
+  width: 90%;
+  margin: 5% auto;
+}
+
+#tutorial-dialog > .modal-dialog > .modal-content 
+{
+    padding: 0px;
+    width: auto;
+    height:auto;
 } 
 
+#tutorial-video-container
+{
+    margin: 0px;
+    padding: 0px;
+}
 
 
 
@@ -1277,9 +1343,6 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
         width: 195px;
     }
 
-    .modal-dialog {
-        width: 220px;
-    }
 
     .ui-expense-label-less-compact {
         width: 70px;
@@ -1338,6 +1401,30 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
 
     .ui-expense-amount, .ui-monthly-amount , .ui-yearly-amount, .ui-current-amount {       
         margin-left: -10px;
+    }
+
+    #setting-dialog > .modal-dialog > .modal-content 
+    {
+        width: 270px;
+    } 
+
+
+    .TabbedPanelsTab 
+    {
+        width: auto;
+        text-align: center;
+    }
+
+
+    #settings-category-combo-delete, #settings-category-combo-add, #settings-expense-combo, #settings-new-expense-input-caption, #settings-expense-input-new-caption, #settings-all-expenses-combo, #settings-category-input-new-caption, #settings-category-combo-rename, #settings-history-combo, #settings-language-combo, #settings-skin-combo
+    {
+        width: 80px;
+    }
+
+    #btn-add-new-entry, #btn-rename-entry, #btn-rename-category, #btn-delete-entry, #btn-logout
+    {
+        width: 50px;
+        text-align: center;
     }
 
 

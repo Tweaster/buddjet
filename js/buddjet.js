@@ -1,11 +1,4 @@
 
-// As of version 0
-var new_user_raw_data = '{"formatVersion":0,"lastCommit":[{"year":2016,"month":1,"date":1,"hours":0,"minutes":0,"seconds":0}],"currentMonthIndex":1,"categories":[{"category":"income","caption":"Income","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-ef8c-4ab9-b436","caption":"Income #1","frequency":"weekly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-fab1-1ce2-a9c0","caption":"Income #2","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-a6d1-4fab-11ce","caption":"Additional Income","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"housing","caption":"Housing","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-bf8c-4ab9-bb34","caption":"Mortgage/Rent","frequency":"weekly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-e23c-4d92-a9c0","caption":"Maintenance","frequency":"monthly","value":"0.0","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-a6d1-4942-8904","caption":"HOA Dues","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"transportation","caption":"Transportation","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-57be-4c95-b2e6","caption":"Car loan #1","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-f292-48d6-b5ff","caption":"Public Transportation","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-9b56-4e4a-aa89","caption":"Gas","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-6be8-43b1-8cd5","caption":"DMV Fees","frequency":"monthly","value":"0.0","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-ab5a-47c5-a7d4","caption":"Parking Fees","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-babd-4a65-8540","caption":"Oil Changes","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-7968-4574-9d0f","caption":"Repairs","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-0915-4bde-b53b","caption":"Maintenance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"medical","caption":"Medical","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-c93f-4fce-a337","caption":"Office Visits","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-6428-4d17-968f","caption":"Dental ","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-8238-47ec-bf7b","caption":"Glasses/Contacts","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-95c5-48f9-b845","caption":"Specialty Care","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-041b-4753-9410","caption":"Medications","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"utilities","caption":"Utilities","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-563e-419f-a6ec","caption":"Natural Gas","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-55a1-4266-802d","caption":"Electric","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-864f-4744-903e","caption":"Water","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-b56e-4499-836a","caption":"Sewer","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-4cfc-43e6-b8dc","caption":"Trash/Recycling","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-e051-4d3b-ab71","caption":"Phone (home)","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-d4e5-499f-8612","caption":"Phone (cell)","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-9fec-4784-a176","caption":"Internet","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-4b4b-42cc-b99b","caption":"Cable","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"personal","caption":"Personal","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-6c9f-4bde-bdc2","caption":"Clothing","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-bb86-4f25-a71e","caption":"Gym Membership","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-6012-473a-9d6e","caption":"Hair Cuts","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-16c2-4dcb-be19","caption":"Baby Sitters","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-9bc3-404c-b222","caption":"Child Support","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-908c-403b-89a2","caption":"Alimony","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"entertainment","caption":"Entertainment","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-bd19-4ddc-b3f5","caption":"Subscriptions","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-c494-4e9f-99f4","caption":"Eating Out","frequency":"weekly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-c164-4110-8bfb","caption":"Vacation Fund","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"household","caption":"Household Items","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-6308-4ad9-ab5c","caption":"Groceries","frequency":"weekly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-f601-4fe4-af0d","caption":"Toiletries","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"giving","caption":"Giving","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-1192-4221-b501","caption":"Tithing","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-46da-447c-a15d","caption":"Charities","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-453b-46d4-87fe","caption":"Christmas Fund","frequency":"monthly","value":"0.0","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-a679-46da-8f70","caption":"Birthday Fund","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-dbc9-4407-a88a","caption":"Wedding/Anniversary Fund","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"pets","caption":"Pets","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-c7ec-4c9c-be91","caption":"Vet Visits","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-87a8-46e9-b20d","caption":"Food","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-e33b-4d2c-8b26","caption":"Medicine","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"insurance","caption":"Insurance","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-6cb7-46da-b399","caption":"Homeowners Insurance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-1865-4509-ae41","caption":"Renters Insurance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-148e-4fd5-a423","caption":"Health Insurance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-3013-49f3-b18b","caption":"Auto Insurance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-03f7-4db2-a35d","caption":"Life Insurance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-1350-4ac6-aefd","caption":"Disability Insurance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-f3fb-48bc-b2f8","caption":"LTC Insurance","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"taxes","caption":"Taxes","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-603f-436c-93da","caption":"Real Estate Taxes","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-2f79-4024-bb0e","caption":"Personal Property Taxes","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"debt","caption":"Debt Reduction","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-cdf1-482c-89c8","caption":"Credit Cards","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-08d4-4cb8-b699","caption":"Personal Loans","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-f63f-4cd7-9b4b","caption":"Student Loans","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"education","caption":"Education","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-32d2-4e72-9225","caption":"Tuition","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-a770-4ff9-9f09","caption":"College Fund","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-fb15-45d5-8e70","caption":"School Supplies","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]},{"category":"savings","caption":"Savings","monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"expenses":[{"id":"-84a0-477c-9d75","caption":"Emergency Fund","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]},{"id":"-2294-46fb-b9a7","caption":"Misc savings","frequency":"monthly","value":0,"monthlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"yearlyProjection":[0,0,0,0,0,0,0,0,0,0,0,0],"monthlyTotals":[0,0,0,0,0,0,0,0,0,0,0,0]}]}]}'
-
-
-var app_id = "org.projectfurnace.buddjet";
-var current_format_version = 0;
-
 // declare global variables here
 var expenseDonutChart;
 var balanceBarChart;
@@ -13,10 +6,260 @@ var tendencyBarChart;
 
 var updateCharts;
 
-var user_data;
 
 
-var number_of_displayed_months = 6;
+
+function findCategory(category, data)
+{
+  if (data !== null && data.categories !== null)
+  {
+    var categoryObjects = data.categories.filter(
+      function(item)
+      {
+        return (item !== null && item.category !== null && item.category == category); 
+      }
+    );
+
+    if (categoryObjects !== null && categoryObjects.length !== 0)
+    {
+      return categoryObjects[0];
+    }
+  }
+  return null;
+}
+
+
+function findItem(category, id, data)
+{
+  var categoryObject = findCategory(category, data);
+  if (categoryObject !== null && categoryObject.expenses !== null)
+  {
+    var expenseObjects = categoryObject.expenses.filter(
+      function(item) 
+      { 
+        return (item !== null && item.id !== null && item.id == id); 
+      }
+    );
+  }
+
+  if (expenseObjects !== null && expenseObjects.length !== 0)
+  {
+    return expenseObjects[0];
+  }
+  return null;
+}
+
+
+function doubleDigitPrecision(n)
+{
+  return Math.floor(n * 100.0) / 100.0;
+}
+
+
+function launchTutorial()
+{
+  var maxW = $(window).width();
+  var maxH = $(window).height() * 0.8;
+
+  maxW = maxH > maxW * 0.5625 ? maxW : maxH / 0.5625;
+
+  var w = Math.floor( maxW * 0.9) - 30;
+  var h = Math.floor(w * 0.5625);
+
+  $('#tutorial-dialog > .modal-dialog').css("width", (w + 30).toString() + "px");
+
+  var html = '<iframe width="' + w.toString()+ '" height="' + h.toString() + '" src="https://www.youtube.com/embed/UmInkhWS0ao" frameborder="0" allowfullscreen id="tutorial-video-container"></iframe>';
+  $('#tutorial-dialog-content').html(html);
+
+  $('#tutorial-dialog').modal();  
+}
+
+
+function encodeData(data)
+{
+  var data_raw = JSON.stringify(data);
+
+  huffman = Huffman.treeFromText(data_raw); // generate the tree
+  treeEncoded = huffman.encodeTree(); // will return an javascript array with tree representation
+  
+  treeJSON = JSON.stringify(treeEncoded); // get a JSON string for easy transportation 
+
+  var encoded_data = huffman.encode(data_raw);
+
+  var t = treeJSON.replace("'", "\'");
+  var d = encoded_data.replace("'", "\'");
+
+  return JSON.stringify( { t : t, d :  d});
+  //return JSON.stringify( { t : treeJSON, d :  encoded_data});
+}
+
+function decodeData(raw_data)
+{
+
+  var data = JSON.parse(raw_data);
+  {
+    if (data != null && typeof(data) != "undefined" && data.t != null && typeof(data.t) != "undefined" && data.d != null && typeof(data.d) != "undefined")
+    {
+      var t = data.t.replace("\'", "'");
+      var d = data.d.replace("\'", "'");
+
+
+      var tree = Huffman.Tree.decodeTree(JSON.parse(t)); // restore the tree based on array representation
+      var d_data = tree.decode(d);
+      return JSON.parse(d_data);
+
+      //var tree = Huffman.Tree.decodeTree(data.t); // restore the tree based on array representation
+      //var d_data = tree.decode(data.d);
+      //return JSON.parse(d_data);
+    }
+  }
+  return null;
+}
+
+
+function fieldRequestResponseToObject(raw_data)
+{
+  if (raw_data != null && raw_data.length > 2)
+  {
+    var tmp = raw_data.substring(0, raw_data.length - 2);
+    return JSON.parse(tmp);
+  }
+
+  return null;
+}
+
+
+
+/*
+ * accepted comd types:
+ * - 'change-category-caption'
+ * - 'change-expense-caption'
+ * - 'change-category-projections'
+ * - 'change-expense-projections-at-index'
+ * - 'change-expense-current-projection'
+ * - 'change-expense-amount'
+ * - 'remove-expense'
+ * - 'add-expense'
+ */
+function applyChange(target, changeCmd)
+{
+  if (target !== null && changeCmd !== null && changeCmd.type !== null)
+  {
+    switch (changeCmd.type)
+    {
+      case 'change-category-caption':
+        if (changeCmd.category !== null && changeCmd.caption !== null)
+        {
+          var categoryObj = findCategory(changeCmd.category, target);
+          if (categoryObj !== null && changeCmd.caption !== null)
+          {
+            categoryObj.caption = changeCmd.caption;
+          }
+        }
+        break;
+      case 'change-expense-caption':
+        if (changeCmd.category !== null && changeCmd.id !== null && changeCmd.caption !== null)
+        {
+          var item = findItem(changeCmd.category, changeCmd.id), target;
+          if (item !== null && item.caption !== null)
+          {
+            item.caption = changeCmd.caption;
+          }
+        }
+        break;
+      case 'change-category-projections':
+        if (changeCmd.category !== null && changeCmd.monthlyProjection !== null && changeCmd.yearlyProjection !== null && changeCmd.index !== null)
+        {
+          var categoryObj = findCategory(changeCmd.category, target);
+          if (categoryObj !== null && changeCmd.monthlyProjection !== null && changeCmd.yearlyProjection !== null)
+          {
+            categoryObj.monthlyProjection[Number(changeCmd.index)] = doubleDigitPrecision(Number(changeCmd.monthlyProjection));
+            categoryObj.yearlyProjection[Number(changeCmd.index)] = doubleDigitPrecision(Number(changeCmd.yearlyProjection));
+          }
+        }
+        break;
+      case 'change-expense-projections-at-index':
+        if (changeCmd.category !== null && changeCmd.id !== null && changeCmd.monthlyProjection !== null && changeCmd.yearlyProjection !== null && changeCmd.index !== null)
+        {
+          var item = findItem(changeCmd.category, changeCmd.id, target);
+          if (item !== null && changeCmd.monthlyProjection !== null && changeCmd.yearlyProjection !== null)
+          {
+            item.monthlyProjection[Number(changeCmd.index)] = doubleDigitPrecision(Number(changeCmd.monthlyProjection));
+            item.yearlyProjection[Number(changeCmd.index)] = doubleDigitPrecision(Number(changeCmd.yearlyProjection));
+          }
+        }
+        break;
+      case 'change-expense-current-projection':
+        if (changeCmd.category !== null && changeCmd.id !== null && changeCmd.amount !== null && changeCmd.frequency !== null)
+        {
+          var item = findItem(changeCmd.category, changeCmd.id, target);
+          if (item !== null && item.value !== null && item.frequency !== null)
+          {
+            item.value = doubleDigitPrecision(Number(changeCmd.amount));
+            item.frequency = changeCmd.frequency;
+          }
+        }
+        break;
+      case 'change-expense-amount':
+        if (changeCmd.category !== null && changeCmd.id !== null && changeCmd.amount !== null && changeCmd.index !== null)
+        {
+          var item = findItem(changeCmd.category, changeCmd.id, target);
+          if (item !== null && item.monthlyTotals !== null)
+          {
+            item.monthlyTotals[changeCmd.index] = doubleDigitPrecision(Number(changeCmd.amount));
+          }
+        }
+        break;
+      case 'remove-expense':
+        if (changeCmd.category !== null && changeCmd.id !== null )
+        {
+          var categoryObj = findCategory(changeCmd.category, target);
+          if (categoryObj !== null && categoryObj.expenses !== null)
+          {
+            var i = 0;
+            var found = false;
+            for (i = 0; i < categoryObj.expenses.length; i++)
+            {
+              if (categoryObj.expenses[i] !== null && categoryObj.expenses[i].id !== null && categoryObj.expenses[i].id == changeCmd.id)
+              {
+                found = true;
+                break;
+              }
+              i++;
+            }
+            if (found)
+            {
+              categoryObj.expenses.splice(i, 1);
+            }
+          }
+        }
+        break;
+      case 'add-expense':
+        if (changeCmd.category !== null && changeCmd.id !== null && changeCmd.caption)
+        {
+          var categoryObj = findCategory(changeCmd.category, target);
+          if (categoryObj !== null && categoryObj.expenses !== null)
+          {
+            var newExpense = {
+              "id": "",
+              "caption": "",
+              "frequency": "monthly",
+              "value": 0,
+              "monthlyProjection": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "yearlyProjection": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "monthlyTotals": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            }
+            newExpense.id = changeCmd.id;
+            newExpense.caption = changeCmd.caption;
+
+            categoryObj.expenses.push(newExpense);
+          }
+        }
+        break;
+
+    }
+  }
+}
 
 
 function getUTCCurrentMonth()
@@ -78,14 +321,19 @@ function updateMonthsCombo()
   var currentMonth = d.getUTCMonth();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  for (var i = 0; i < number_of_displayed_months - 1; i++)
+  var html = `<option value="prevision">Budget Prevision</option>
+              <option value="0" selected>Current month</option>
+              <option value="1">Last month</option> `;
+
+  for (var i = 0; i < number_of_displayed_months - 2; i++)
   {
     var index = currentMonth - 2 - i;
     index = index < 0 ? index + 12 : index;
     var caption = months[index] + ' ' + (index > currentMonth ? currentYear - 1 : currentYear).toString();
-    $('#ui-board-select').append('<option value="' + (2 + i).toString() + '">' + caption + '</option>');
+    html += '<option value="' + (2 + i).toString() + '">' + caption + '</option>';
     
   }
+  $('#ui-board-select').html(html);
   
 }
 
@@ -238,6 +486,7 @@ function generateExpenseChartData(currentContext, category)
           var amount = Math.floor(categoryObjects[0].expenses[i].monthlyProjection[getUTCCurrentMonth()]);
             var caption = categoryObjects[0].expenses[i].caption;
             chartData.push({
+                "caption" : caption,
                 "budgeted": amount,
                 "color" : "#ff2655"
             });
@@ -262,20 +511,22 @@ function generateExpenseChartData(currentContext, category)
             }
           }
         }
+        income = Math.floor(income);
+        expense = Math.floor(expense);
         var balance = income - expense;
         chartData.push({
             "caption": "Income (+" + income.toString() + "$)",
-            "budgeted": Math.floor(income),
+            "budgeted": income,
             "color" : "#ff2655"
         });
         chartData.push({
             "caption": "Expense (-" + expense.toString() + "$)",
-            "budgeted": Math.floor(-expense),
+            "budgeted": -expense,
             "color" : "#ff2655"
         });
         chartData.push({
             "caption": "Balance (" + balance.toString() + "$)",
-            "budgeted": Math.floor(balance),
+            "budgeted": balance,
             "color" : "#ff2655"
         });
 
@@ -538,6 +789,27 @@ function expenseInputUI(expenseId, category, amount)
   return '<div class="ui-current-amount"> <a href="#" id="ui-current-amount' + expenseId + '" data-toggle="modal" data-target="#expense-entry-dialog"  class="ui-fake-input" onclick="currentAmountModal(\'' + expenseId + '\', \'' + category + '\', true)"><div class="inner-fake-input">' + amount.toString() + '$</div></a></div>';
 }
 
+
+
+function categoryEntryHTML(category, caption)
+{
+  var html = '';
+
+  html += '<li data-role="list-divider" class="'+ category +' category-' + category + '">' + caption + '</li>';
+  html += '<li class="category-' + category + '"><hr></li>';
+  html += '<li class="ui-expense-li category-' + category + ' ui-li-static ui-body-inherit">';
+  html += '<div class="ui-expense-label-less-compact"></div>';
+  html += '<div class="frequency-combo-container-hidden">';
+  html += '</div><div class="ui-expense-amount-hidden"></div>';
+  html += '<div class="ui-monthly-amount-hidden ' + category + '-monthly-total">0$</div>';
+  html += '<div class="ui-yearly-amount-hidden ' + category + '-yearly-total">0$</div>';
+  html += '<div class="ui-current-amount ' + category + '-current-total">0$</div>';
+  html += '<div class="ui-current-percentage ' + category + '-current-percentage">0%</div>';
+  html += '</li>';
+
+  return html;
+}
+
 function expenseEntry(caption, frequency, budgetedAmount, expenseId, category)
 {
 
@@ -591,26 +863,255 @@ function updateTotalHandler(category)
 }
 
 
+function prepareCommit(changeCmd)
+{
+  if (pro_version)
+  {
+    change_cmd_pipe.push(changeCmd);
+  }
+}
+
+
+function saveSessionAsNewUser()
+{
+  if (pro_version == false)
+  {
+    return;
+  }
+
+  var session = localStorage.getItem(app_id + ".logged-in-session");
+
+  var credentials = localStorage.getItem(app_id + "." + session + ".credentials");
+  var data = localStorage.getItem(app_id + "." + session + ".data");
+  var fullid = localStorage.getItem(app_id + "." + session + ".fullid");
+
+  var jqxhr = $.post(
+    "http://sandbox.projectfurnace.org/new_user_request.php",
+    { user : session, credentials : credentials, data : data, fullid : fullid }
+  );
+
+  jqxhr.done(
+    function (d)
+    {
+      change_cmd_pipe.splice(0);
+
+      localStorage.setItem(app_id + "." + session + ".cmd_pipe", encodeData([]));
+      localStorage.setItem(app_id + "." + session + ".revision", "0");
+      window.location.href = "login.html";
+    }
+  );
+
+  change_cmd_pipe.splice(0);
+
+  localStorage.setItem(app_id + "." + session + ".cmd_pipe", encodeData([]));
+  localStorage.setItem(app_id + "." + session + ".revision", "0");
+}
+
+function refreshCurrentPage()
+{
+
+  synchronizeWithServer(
+    function()
+    {
+      var selectedBoardLabel = $("#ui-board-select").val();
+      if (selectedBoardLabel != null && selectedBoardLabel != "prevision")
+      {
+        fillSpreadsheetWithValuesForMonth(current_displayed_month);
+      }
+      updateChartsHandler(null);
+    }
+  );
+}
+
+
+function pushToServer(revision)
+{
+  commitChangeLocaly(false);
+
+  var session = localStorage.getItem(app_id + ".logged-in-session");
+  var data = localStorage.getItem(app_id + "." + session + ".data");
+
+  var jqxhr = $.post(
+    "http://sandbox.projectfurnace.org/commit.php",
+    { email : session, data : data,  revision : Number(revision) }
+  );
+
+  jqxhr.done(
+    function(d) 
+    {
+      // the push to the server was successful therefore we can save the new revision
+      // and flush the command pipe
+      localStorage.setItem(app_id + "." + session + ".revision", revision.toString());
+      change_cmd_pipe.splice(0);
+      localStorage.setItem(app_id + "." + session + ".cmd_pipe", encodeData([]));
+    }
+  );
+}
 
 
 
-function commitChange() {
+function synchronizeWithServer(successCallbackFunc, failureCallbackFunc)
+{
+  var session = localStorage.getItem(app_id + ".logged-in-session");
+
+  if (pro_version == false)
+  {
+    if (successCallbackFunc != null)
+    {
+      successCallbackFunc();
+    }
+    return;
+  }
+
+  $.ajaxSetup(
+    {
+      crossDomain: true,
+      cache: false
+    }
+  );
+
+  var jqxhr = $.post(
+    "http://sandbox.projectfurnace.org/field_request.php",
+    { user : session, field : "REV" }
+  );
+
+  jqxhr.fail(
+    function()
+    {
+      $('.no-internet-connection').removeClass('ui-screen-hidden');
+
+      if (failureCallbackFunc != null)
+      {
+        failureCallbackFunc();
+      }
+    }
+  );
+
+  jqxhr.done(
+    function(d) 
+    {
+      $('.no-internet-connection').addClass('ui-screen-hidden');
+
+      var rev = fieldRequestResponseToObject(d);
+      if (rev == null || rev.REV == null)
+      {
+        saveSessionAsNewUser();
+      }
+      else
+      {
+        var revision = Number(localStorage.getItem(app_id + "." + session + ".revision"));
+        if (revision != Number(rev.REV))
+        {
+          var last_raw_data_from_server = $.post(
+            "http://sandbox.projectfurnace.org/field_request.php",
+            { user : session, field : "JSONDATA,REV" }
+          );
+
+          last_raw_data_from_server.done(
+            function (server_json_data)
+            {
+              var server_data = fieldRequestResponseToObject(server_json_data);
+              if (server_data != null && server_data.JSONDATA != null)
+              {
+                user_data = decodeData(server_data.JSONDATA);
+
+                if (change_cmd_pipe.length != 0)
+                {
+                  for (var i = 0; i < change_cmd_pipe.length; i++)
+                  {
+                    applyChange(user_data, change_cmd_pipe[i]);
+                  }
+
+                  pushToServer(Number(server_data.REV) + 1);
+                  if (successCallbackFunc != null)
+                  {
+                    successCallbackFunc();
+                  }
+                }
+                else
+                {
+                  localStorage.setItem(app_id + "." + session + ".revision", server_data.REV.toString());
+                  commitChangeLocaly(false);
+                  if (successCallbackFunc != null)
+                  {
+                    successCallbackFunc();
+                  }
+                }
+              }
+            }
+          );
+        }
+        else if (change_cmd_pipe.length != 0)
+        {
+          pushToServer(revision + 1);
+          if (successCallbackFunc != null)
+          {
+            successCallbackFunc();
+          }
+        }
+        else
+        {
+          successCallbackFunc();
+        }
+      }
+    }
+  );
+}
+
+
+function commitChangeLocaly(bCheckPendingCmdsNumber) 
+{
   var date = new Date();
+  var currentMonth = date.getUTCMonth();
   user_data.lastCommit[0].year = date.getUTCFullYear();
-  user_data.lastCommit[0].month = date.getUTCMonth();
+  user_data.lastCommit[0].month = currentMonth;
   user_data.lastCommit[0].date = date.getUTCDate();
   user_data.lastCommit[0].hours = date.getUTCHours();
   user_data.lastCommit[0].minutes = date.getUTCMinutes();
   user_data.lastCommit[0].seconds = date.getUTCSeconds();
 
-  var raw_data = JSON.stringify(user_data);
+  var nextMonth = (date.getUTCMonth() + 1) % 12;
 
-  // TODO uncomment for IPAGE
-  //$.post( "savejson.php", { data: raw_data } );
 
-  var session = sessionStorage.getItem(app_id + ".session");
+  for (var i = 0; i < user_data.categories.length; i++)
+  {
+    var categoryObj = user_data.categories[i];
+    categoryObj.monthlyProjection[nextMonth] = categoryObj.monthlyProjection[currentMonth];
+    categoryObj.yearlyProjection[nextMonth] =  categoryObj.yearlyProjection[currentMonth];
+
+    for (var j = 0; j < categoryObj.expenses.length; j++)
+    {
+      categoryObj.expenses[j].monthlyTotals[nextMonth] = 0.0;
+      categoryObj.expenses[j].monthlyProjection[nextMonth] = categoryObj.expenses[j].monthlyProjection[currentMonth];
+      categoryObj.expenses[j].yearlyProjection[nextMonth] = categoryObj.expenses[j].yearlyProjection[currentMonth];
+    }
+  }
+
+
+  var raw_data = encodeData(user_data);
+
+  var raw_change_cmds = encodeData(change_cmd_pipe);
+
+
+  var session = localStorage.getItem(app_id + ".logged-in-session");
   localStorage.setItem(app_id + "." + session + ".data", raw_data);
+  localStorage.setItem(app_id + "." + session + ".cmd_pipe", raw_change_cmds);
+
+  // if PRO
+  // if the amount of pending commands are piling up
+  // and reaches a limit of 25, let's synchronize with server
+  // in order to be able to flush those pending cmd
+  if (bCheckPendingCmdsNumber)
+  {
+    if (change_cmd_pipe.length > 25)
+    {
+      refreshCurrentPage();
+    }
+  }
+
 }
+
+
 
 
 function fillSpreadsheetWithValuesForMonth(monthIndex)
@@ -631,10 +1132,6 @@ function fillSpreadsheetWithValuesForMonth(monthIndex)
 
         $('#ui-current-amount' + expenseId).html('<div class="inner-fake-input">' + currentAmountForEntry.toString() + '$</div>');
         $('#ui-current-percentage' + expenseId).html(expenseProgress(percentageAsString(currentAmountForEntry, currentMonthlyProjectionForEntry))); 
-      }
-      else
-      {
-        alert("problem at " + categoryId + " and index" + j);
       }
     }
 
@@ -687,14 +1184,32 @@ function budgetedExpenseUpdate(id, category, amount)
     $("#ui-yearly-amount" + id.toString()).html(yearlyValue.toString() + '$', null);
 
 
+    var changeCmd1 = { 
+      type : 'change-expense-current-projection',  
+      category : category , 
+      id : id,
+      amount : amount,
+      frequency : expenseObjects[0].frequency
+    }
+
+    var changeCmd2 = { 
+      type : 'change-expense-projections-at-index',  
+      category : category , 
+      id : id,
+      monthlyProjection : monthlyValue,
+      yearlyProjection : yearlyValue,
+      index : current_displayed_month
+    }
 
 
     updateTotalHandler(category);
     updateChartsHandler(null);
 
 
+    prepareCommit(changeCmd1);
+    prepareCommit(changeCmd2);
 
-    commitChange();
+    commitChangeLocaly(true);
 
     
 
@@ -737,7 +1252,17 @@ function currentExpenseUpdate(id, category, amountToAdd)
 
   updateCurrentCategoryTotals(category);
 
-  commitChange();
+  var changeCmd = { 
+    type : 'change-expense-amount',
+    category : category,
+    id : id,
+    amount : expenseObjects[0].monthlyTotals[current_displayed_month],
+    index : current_displayed_month
+  };
+
+  prepareCommit(changeCmd);
+
+  commitChangeLocaly(true);
 
 }
 
@@ -827,36 +1352,6 @@ function revealCategory() {
   updateChartsHandler(null);
 }
 
-function clearExpensesForMonth(monthToClearIndex, lastValidMonthIndex) {
-  if (monthToClearIndex != lastValidMonthIndex)
-  {
-    var m = monthToClearIndex;
-
-    for (var i = 0; i < user_data.categories.length; i++)
-    {
-      var categoryObj = user_data.categories[i];
-      categoryObj.monthlyProjection[m] = categoryObj.monthlyProjection[lastValidMonthIndex];
-      categoryObj.yearlyProjection[m] = categoryObj.yearlyProjection[lastValidMonthIndex];
-      for (var j = 0; j < categoryObj.expenses.length; j++)
-      {
-        var expenseObj = user_data.categories[i].expenses[j];
-        expenseObj.monthlyTotals[m] = 0.0;
-        expenseObj.monthlyProjection[m] = expenseObj.monthlyProjection[lastValidMonthIndex];
-        expenseObj.yearlyProjection[m] = expenseObj.yearlyProjection[lastValidMonthIndex];
-      }
-    }
-    
-    m = (m <= 1) ? 11 : (m - 1);
-
-    // let's perform a recursion in case several months have elapsed between the last valid month
-    // and now (the monthe to clear). It will also clear all the months in between
-    clearExpensesForMonth(m, lastValidMonthIndex);
-  }
-
-  user_data.currentMonthIndex = monthToClearIndex;
-  commitChange();
-}
-
 
 function fetchEntryFromDialog(event) 
 {
@@ -884,18 +1379,12 @@ function fetchEntryFromDialog(event)
 
 
 
-function buddjetStart()
+function postStart()
 {
-  $('.container').removeClass('ui-screen-hidden');
 
   updateMonthsCombo();
 
-  var raw_data = localStorage.getItem(app_id + "." + sessionStorage.getItem(app_id + ".session") + ".data");
-  if (raw_data == null || typeof(raw_data) == "undefined" || raw_data.length < 100)
-  {
-    raw_data = new_user_raw_data;
-  }
-  user_data = JSON.parse(raw_data);
+  
 
   // verify if file format has changed. 
   if (user_data.hasOwnProperty('formatVersion') == false || typeof(user_data.formatVersion) == "undefined" || user_data.formatVersion != current_format_version)
@@ -907,12 +1396,27 @@ function buddjetStart()
     user_data = JSON.parse(new_user_raw_data);
   }
 
-  
-  // we need to check if the month has changed
-  if (user_data.lastCommit[0].month != getUTCCurrentMonth())
+  var expensesHTML = "";
+  var incomeHTML = "";
+
+  for (var i = 0; i < user_data.categories.length; i++)
   {
-    clearExpensesForMonth(getUTCCurrentMonth(), user_data.lastCommit[0].month);
+    var category = user_data.categories[i].category;
+    var caption = user_data.categories[i].caption;
+
+    $('#' + category + '-sidebar-entry').text(caption);
+
+    if (category != 'income')
+    {
+      expensesHTML += categoryEntryHTML(category, caption);
+    }
+    else
+    {
+      incomeHTML += categoryEntryHTML(category, caption);
+    }
   }
+  $('.expenses-list').html(expensesHTML);
+  $('.income-list').html(incomeHTML);
 
 
   for (var i = 0; i < user_data.categories.length; i++)
@@ -1202,7 +1706,57 @@ function buddjetStart()
 
     $("#validate-new-amount-modal-dialog-btn").unbind().click( fetchEntryFromDialog);
     $("#modal-dialog-input-amount").unbind().keydown( fetchEntryFromDialog);
- 
+
+    $("#tutorial-dialog").on('hidden.bs.modal', function () {
+            $('#tutorial-dialog-content').html("");
+    });
+
+
+
+    var session = localStorage.getItem(app_id + ".logged-in-session");
+    if (localStorage.getItem(app_id + "." + session + ".first-time") == "true")
+    {
+      localStorage.removeItem(app_id + "." + session + ".first-time");
+      setTimeout( function() { launchTutorial(); }, 3000);
+    }
+
+    
+}
+
+
+function buddjetStart()
+{
+  var session = localStorage.getItem(app_id + ".logged-in-session");
+
+  var raw_data = localStorage.getItem(app_id + "." + session + ".data");
+  if (raw_data == null || typeof(raw_data) == "undefined" || raw_data.length < 100)
+  {
+    user_data = JSON.parse(new_user_raw_data);
+  }
+  else
+  {
+    user_data = decodeData(raw_data);
+  }
+
+  var cmd_pipe_raw = localStorage.getItem(app_id + "." + session + ".cmd_pipe");
+  change_cmd_pipe = decodeData(cmd_pipe_raw);
+
+  if (change_cmd_pipe == null)
+  {
+    change_cmd_pipe = [];
+  }
+
+  number_of_displayed_months = Number(localStorage.getItem(app_id + "." + session + ".history-length"));
+
+  if (pro_version)
+  {
+    setInterval(refreshCurrentPage, 180000);
+  }
+
+  var title = sjcl.decrypt(app_id, localStorage.getItem(app_id + "." + session + ".fullid"));
+  $('title').text("Welcome " + title);
+
+  postStart();
 
 }
 

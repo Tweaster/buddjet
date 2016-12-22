@@ -1,6 +1,4 @@
 
-
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,6 +13,7 @@
 <!-- external scripts -->
 <script src="js/jquery-1.11.1.min.js"></script>
 
+<script src="js/globals.js"></script>
 <script src="js/buddjet.js"></script>
 
 
@@ -25,19 +24,12 @@
 <body>
 
 <script>
-
     $(document).ready(
-
       function ()
       {
-
-
-
         if (typeof(Storage) !== "undefined") 
         {
-
             var session = localStorage.getItem(app_id + ".logged-in-session");
-
             // if we already have a valid session
             // then redirect to app page
             if (session == null || typeof(session) == "undefined")
@@ -48,7 +40,6 @@
             {
               window.location.href = "app.html";
             }
-
         }
         else 
         {
@@ -57,11 +48,9 @@
           //alert('FATAL ERROR: ACCESS DENIED TO LOCAL STORAGE');
           window.location.href = "error/error.html";
         } 
-
         
       }
     );
-
 </script>
   
 

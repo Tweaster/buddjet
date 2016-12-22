@@ -319,7 +319,7 @@ function renameExpense()
         var currentId = categoryObj.expenses[j].id;
         if (currentId == id)
         {
-          categoryObj.expenses[j] = caption;
+          categoryObj.expenses[j].caption = caption;
 
           var cmd = {
             "type" : "change-expense-caption",
@@ -328,7 +328,7 @@ function renameExpense()
             "caption" : caption
           };
 
-          $("#ui-expense-label" + expenseId).text(caption);
+          $("#ui-expense-label" + id).text(caption);
 
           prepareCommit(cmd);
           commitChangeLocaly(false);

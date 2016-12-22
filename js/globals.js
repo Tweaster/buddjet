@@ -14,4 +14,4 @@ var change_cmd_pipe = [];
 
 var number_of_displayed_months = 6;
 
-var pro_version = false;
+var pro_version = true;

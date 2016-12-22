@@ -1070,7 +1070,7 @@ function commitChangeLocaly(bCheckPendingCmdsNumber)
   user_data.lastCommit[0].minutes = date.getUTCMinutes();
   user_data.lastCommit[0].seconds = date.getUTCSeconds();
 
-  var nextMonth = (date.getUTCMonth() + 1) % 12;
+  var nextMonth = Number((date.getUTCMonth() + 1)) % 12;
 
 
   for (var i = 0; i < user_data.categories.length; i++)

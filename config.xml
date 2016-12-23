@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.projectfurnace.buddjet" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="org.projectfurnace.buddjet" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Buddjet</name>
     <description>
         Budget, plan and track your expenses as well as your incomes. Organize them in categories and get statistics about your expenditure vs budget performance as well as other significant metrics over the course of time.
+        Monitor your performance with comprehensive graphs and bar charts that provide a bird's eye view of your financial situation as well as detailed and informative metrics on each expenses categories.
+        
     </description>
     <author email="dev@projectfurnace.org" href="http://buddjet.projectfurnace.org">
         Fabrice Rasoamiaramanana

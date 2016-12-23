@@ -23,8 +23,6 @@
 }
 
 
-
-
 -->
 </style>
 
@@ -77,6 +75,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
 
+<script src="js/globals.js"></script>
+<script src="js/buddjet.js"></script>
+
 
 -->
 
@@ -87,23 +88,6 @@
 <body>
 
 <script>
-
-
-    $(document).ready(function() {
-        // are we running in native app or in a browser?
-        window.isphone = false;
-        if(document.URL.indexOf("http://") === -1 
-            && document.URL.indexOf("https://") === -1) {
-            window.isphone = true;
-        }
-
-        if( window.isphone ) {
-            document.addEventListener("deviceready", onDeviceReady, false);
-        } else {
-            onDeviceReady();
-        }
-    });
-
 
 
     function onDeviceReady()
@@ -133,6 +117,25 @@
 
       injectSettingsDialogContent();
     }
+
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    $(document).ready(function() 
+    {
+        // are we running in native app or in a browser?
+        window.isphone = false;
+        if(document.URL.indexOf("http://") === -1 
+            && document.URL.indexOf("https://") === -1) 
+        {
+            window.isphone = true;
+        }
+
+        if( !window.isphone ) 
+        {
+            onDeviceReady();
+        }
+    });
     
 
 </script>

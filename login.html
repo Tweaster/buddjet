@@ -15,9 +15,59 @@
   <link rel="stylesheet" href="css/login.css">
   <ink rel="stylesheet" href="css/normalize-5.0.0.min.css">
 
+  <script src='js/jquery-1.11.1.min.js'></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/sjcl.js"></script>
+
   <script src="js/huffman-0.9.0.min.js"></script>
   <script src="js/globals.js"></script>
   <script src="js/buddjet.js"></script>
+
+
+
+
+<script src="js/login.js"></script>
+
+<script src="cordova.js"></script>
+
+    
+<script>
+
+
+  function onDeviceReady() { 
+    checkSession();
+
+    $("#login-form").submit(function(e) {
+        e.preventDefault();
+        login();
+    });
+
+    $("#signup-form").submit(function(e) {
+        e.preventDefault();
+        signup();
+    });
+  }
+
+  document.addEventListener("deviceready", onDeviceReady, false);
+
+  $(document).ready(function() 
+  {
+      // are we running in native app or in a browser?
+      window.isphone = false;
+      if(document.URL.indexOf("http://") === -1 
+          && document.URL.indexOf("https://") === -1) 
+      {
+          window.isphone = true;
+      }
+
+      if( !window.isphone ) 
+      {
+          onDeviceReady();
+      }
+  });
+
+
+</script>
 
 
  
@@ -109,47 +159,7 @@
       
 </div> <!-- /form -->
 
-<script src='js/jquery-1.11.1.min.js'></script>
-<script src="js/login.js"></script>
-<script src="js/sjcl.js"></script>
-    
-<script>
 
-
-  function onDeviceReady() { 
-    checkSession();
-
-    $("#login-form").submit(function(e) {
-        e.preventDefault();
-        login();
-    });
-
-    $("#signup-form").submit(function(e) {
-        e.preventDefault();
-        signup();
-    });
-  }
-
-  document.addEventListener("deviceready", onDeviceReady, false);
-
-  $(document).ready(function() 
-  {
-      // are we running in native app or in a browser?
-      window.isphone = false;
-      if(document.URL.indexOf("http://") === -1 
-          && document.URL.indexOf("https://") === -1) 
-      {
-          window.isphone = true;
-      }
-
-      if( !window.isphone ) 
-      {
-          onDeviceReady();
-      }
-  });
-
-
-</script>
 
 </body>
 </html>

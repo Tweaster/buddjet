@@ -6,6 +6,8 @@
   <meta name="msapplication-tap-highlight" content="no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
   <!--link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css' -->
+  <meta http-equiv="Cache-control" content="public">
+  <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 20 Feb 2017 11:12:01 GMT">
   
 
   <link rel="shortcut icon" href="img/favicon.png"/>
@@ -113,21 +115,37 @@
     
 <script>
 
-  $(document).ready(
-    function () { 
-      checkSession();
 
-      $("#login-form").submit(function(e) {
-          e.preventDefault();
-          login();
-      });
+  $(document).ready(function() {
+        // are we running in native app or in a browser?
+        window.isphone = false;
+        if(document.URL.indexOf("http://") === -1 
+            && document.URL.indexOf("https://") === -1) {
+            window.isphone = true;
+        }
 
-      $("#signup-form").submit(function(e) {
-          e.preventDefault();
-          signup();
-      });
-    }
-  );
+        if( window.isphone ) {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        } else {
+            onDeviceReady();
+        }
+    });
+
+ 
+  function onDeviceReady() { 
+    checkSession();
+
+    $("#login-form").submit(function(e) {
+        e.preventDefault();
+        login();
+    });
+
+    $("#signup-form").submit(function(e) {
+        e.preventDefault();
+        signup();
+    });
+  }
+  
 
 </script>
 

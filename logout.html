@@ -22,25 +22,39 @@
 
 <script>
 
-    $(document).ready(
-
-      function ()
-      {
-        if (typeof(Storage) !== "undefined") 
-        {
-            localStorage.removeItem(app_id + ".logged-in-session");
-            window.location.href = "index.html";
+    $(document).ready(function() {
+        // are we running in native app or in a browser?
+        window.isphone = false;
+        if(document.URL.indexOf("http://") === -1 
+            && document.URL.indexOf("https://") === -1) {
+            window.isphone = true;
         }
-        else 
-        {
-          // TODO redirect to error page
-          // write access to local storage denied to application
-          //alert('FATAL ERROR: ACCESS DENIED TO LOCAL STORAGE');
-          window.location.href = "error/error.html";
-        } 
 
+        if( window.isphone ) {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        } else {
+            onDeviceReady();
+        }
+    });
+
+
+    function onDeviceReady()
+    {
+      if (typeof(Storage) !== "undefined") 
+      {
+          localStorage.removeItem(app_id + ".logged-in-session");
+          window.location.href = "index.html";
       }
-    );
+      else 
+      {
+        // TODO redirect to error page
+        // write access to local storage denied to application
+        //alert('FATAL ERROR: ACCESS DENIED TO LOCAL STORAGE');
+        window.location.href = "error/error.html";
+      } 
+
+    }
+    
 
 </script>
   

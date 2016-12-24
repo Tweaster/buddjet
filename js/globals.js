@@ -14,6 +14,6 @@ var change_cmd_pipe = [];
 
 var number_of_displayed_months = 6;
 
-var pro_version = true;
+var pro_version = false;
 
 var dark_theme = true;

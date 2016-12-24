@@ -36,8 +36,9 @@ var settings_dialog_content_frame_lite = `
 
       <p>
         <div class="ui-expense-label">UI skin:</div>
-        <select id="settings-skin-combo">  
-          <option value="3">dark metal</option>
+        <select id="settings-skin-combo" onchange="changeTheme()">  
+          <option value="dark">dark metal</option>
+          <option value="light">light</option>
         </select>
       </p>
 
@@ -103,8 +104,9 @@ var settings_dialog_content_frame = `
 
       <p>
         <div class="ui-expense-label">UI skin:</div>
-        <select id="settings-skin-combo">  
-          <option value="3">dark metal</option>
+        <select id="settings-skin-combo" onchange="changeTheme()">  
+          <option value="dark">dark metal</option>
+          <option value="light">light</option>
         </select>
       </p>
 
@@ -162,6 +164,15 @@ function adjustHistory()
   var session = localStorage.getItem(app_id + ".logged-in-session");
   localStorage.setItem(app_id + "." + session + ".history-length", number_of_displayed_months,toString());
 
+}
+
+function changeTheme()
+{
+  dark_theme = $('#settings-skin-combo').val() == "dark";
+  var session = localStorage.getItem(app_id + ".logged-in-session");
+  localStorage.setItem(app_id + "." + session + ".theme", $('#settings-skin-combo').val());
+
+  window.location.href = "index.html";
 }
 
 
@@ -412,4 +423,5 @@ function injectSettingsDialogContent()
   $('#btn-launch-tutorial').unbind().click(launchTutorialFromSettings);  
 
   $('#settings-history-combo').val(number_of_displayed_months);
+  $('#settings-skin-combo').val(dark_theme ? "dark" : "light");
 }

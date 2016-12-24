@@ -1378,6 +1378,22 @@ function fetchEntryFromDialog(event)
 
 
 
+function applyTheme()
+{
+  var session = localStorage.getItem(app_id + ".logged-in-session");
+  if (session != null && typeof(session) != "undefined")
+  {
+    var theme = localStorage.getItem(app_id + "." + session + ".theme");
+    if (theme != null && typeof(theme) != "undefined" && theme == "light")
+    {
+      dark_theme = false;
+      $('link[href="css/SpryTabbedPanels.css"]').attr('href','css/SpryTabbedPanels-bright.css');
+      $('link[href="css/style-dark.css"]').attr('href','css/style-bright.css');
+    }
+  }
+}
+
+
 
 function postStart()
 {
@@ -1469,7 +1485,7 @@ function postStart()
 */
 
     balanceBarChart = AmCharts.makeChart("expenses-vs-prevision-barchart", {
-          "theme": "dark",
+          "theme": dark_theme ? "dark" : "light",
           "type": "serial",
           "valueAxes": [{
               "stackType": "3d",
@@ -1558,7 +1574,7 @@ function postStart()
       tendencyBarChart = AmCharts.makeChart( "tendency-barchart", {
         "type": "serial",
         "addClassNames": true,
-        "theme": "black",
+        "theme": dark_theme ? "dark" : "light",
         "autoMargins": true,
         "marginLeft": 30,
         "marginRight": 8,
@@ -1569,17 +1585,17 @@ function postStart()
           "adjustBorderColor": false,
           "horizontalPadding": 10,
           "verticalPadding": 8,
-          "color": "#ffffff"
+          "color": dark_theme ? "#FFFFFF" : "#000000"
         },
 
         "valueAxes": [ {
           "title": "Monthly Expenditure vs Prevision",
-          "titleColor" : "#ffffff",
+          "titleColor" : dark_theme ? "#FFFFFF" : "#000000",
           "axisAlpha": 0,
           "position": "left",
           "unit": "$",
-          "color": "#ffffff",
-          "gridColor": "#ffffff"
+          "color": dark_theme ? "#FFFFFF" : "#000000",
+          "gridColor": dark_theme ? "#FFFFFF" : "#000000"
 
         } ],
         "startDuration": 0,
@@ -1600,7 +1616,7 @@ function postStart()
           "lineThickness": 3,
           "bulletSize": 7,
           "bulletBorderAlpha": 1,
-          "bulletColor": "#FFFFFF",
+          "bulletColor": dark_theme ? "#FFFFFF" : "#000000",
           "useLineColorForBulletBorder": true,
           "bulletBorderThickness": 3,
           "fillAlphas": 0,
@@ -1617,7 +1633,7 @@ function postStart()
           "lineThickness": 3,
           "bulletSize": 7,
           "bulletBorderAlpha": 1,
-          "bulletColor": "#FFFFFF",
+          "bulletColor": dark_theme ? "#FFFFFF" : "#000000",
           "useLineColorForBulletBorder": true,
           "bulletBorderThickness": 3,
           "fillAlphas": 0,
@@ -1634,7 +1650,7 @@ function postStart()
           "lineThickness": 3,
           "bulletSize": 7,
           "bulletBorderAlpha": 1,
-          "bulletColor": "#FFFFFF",
+          "bulletColor": dark_theme ? "#FFFFFF" : "#000000",
           "useLineColorForBulletBorder": true,
           "bulletBorderThickness": 3,
           "fillAlphas": 0,
@@ -1647,11 +1663,11 @@ function postStart()
         "categoryField": "caption",
         "categoryAxis": {
           "gridPosition": "start",
-          "gridColor": "#ffffff",
+          "gridColor": dark_theme ? "#FFFFFF" : "#000000",
           "axisAlpha": 0,
           "tickLength": 0,
           "labelRotation": 45,
-          "color": "#ffffff",
+          "color": dark_theme ? "#FFFFFF" : "#000000",
 
         },
         "export": {
@@ -1726,6 +1742,8 @@ function postStart()
 
 function buddjetStart()
 {
+  applyTheme();
+
   var session = localStorage.getItem(app_id + ".logged-in-session");
 
   var raw_data = localStorage.getItem(app_id + "." + session + ".data");

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-    id="org.projectfurnace.buddjet" 
+    id="org.projectfurnace.buddjetlite" 
     version="0.1.1" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>Buddjet Pro</name>
+    <name>Buddjet Lite</name>
     <description>
         Budget, plan and track your personal finances. Organize them in categories and get statistics about your expenditure vs budget performance as well as other significant metrics over the course of time.
     </description>

@@ -172,7 +172,7 @@ function changeTheme()
   var session = localStorage.getItem(app_id + ".logged-in-session");
   localStorage.setItem(app_id + "." + session + ".theme", $('#settings-skin-combo').val());
 
-  window.location.href = "index.html";
+  window.location.href = "login.html";
 }
 
 
@@ -237,9 +237,19 @@ function guid() {
     s4() + '-' + s4() + s4() + s4();
 }
 
-function addExpense()
+function addExpense(category)
 {
-  var category = $('#settings-category-combo-add').val();
+
+  var reloadDialogContent = false;
+  if (category === null  ||  typeof(category) === "undefined")
+  {
+    category = $('#settings-category-combo-add').val();
+    reloadDialogContent = true;
+  }
+
+  
+
+
   var caption = $('#settings-new-expense-input-caption').val();
   if (category != '' && caption != '')
   {
@@ -271,15 +281,30 @@ function addExpense()
       prepareCommit(cmd);
       commitChangeLocaly(false);
 
-      injectSettingsDialogContent();
+
+      if (reloadDialogContent)
+        injectSettingsDialogContent();
     }
   }
 }
 
-function removeExpense()
+function removeExpense(id, category)
 {
-  var category = $('#settings-category-combo-delete').val();
-  var id = $('#settings-expense-combo').val();
+  var reloadDialogContent = false;
+  if (category === null  ||  typeof(category) === "undefined")
+  {
+    category = $('#settings-category-combo-delete').val();
+    reloadDialogContent = true;
+  }
+
+  if (id === null  ||  typeof(id) === "undefined")
+  {
+    id = $('#settings-expense-combo').val();
+    reloadDialogContent = true;
+  }
+
+
+
   if (category != '' && id != '')
   {
 
@@ -308,15 +333,23 @@ function removeExpense()
         prepareCommit(cmd);
         commitChangeLocaly(false);
 
-        injectSettingsDialogContent();
+        if (reloadDialogContent)
+          injectSettingsDialogContent();
       }
     }
   }
 }
 
-function renameExpense()
+function renameExpense(id)
 {
-  var id = $('#settings-all-expenses-combo').val();
+  var reloadDialogContent = false;
+  if (id === null  ||  typeof(id) === "undefined")
+  {
+    id = $('#settings-all-expenses-combo').val();
+    reloadDialogContent = true;
+  }
+
+
   var caption = $('#settings-expense-input-new-caption').val();
 
   if (id != '' && caption != '')
@@ -344,7 +377,8 @@ function renameExpense()
           prepareCommit(cmd);
           commitChangeLocaly(false);
 
-          injectSettingsDialogContent();
+          if (reloadDialogContent)
+            injectSettingsDialogContent();
 
           return;
         }
@@ -353,9 +387,16 @@ function renameExpense()
   }
 }
 
-function renameCategory()
+function renameCategory(category)
 {
-  var category = $('#settings-category-combo-rename').val();
+
+  var reloadDialogContent = false;
+  if (category === null  ||  typeof(category) === "undefined")
+  {
+    category = $('#settings-category-combo-rename').val();
+    reloadDialogContent = true;
+  }
+  
   var caption = $('#settings-category-input-new-caption').val();
 
   if (category != '' && caption != '')
@@ -377,7 +418,8 @@ function renameCategory()
       prepareCommit(cmd);
       commitChangeLocaly(false);
 
-      injectSettingsDialogContent();
+      if (reloadDialogContent)
+        injectSettingsDialogContent();
     }
   }
 
@@ -424,4 +466,76 @@ function injectSettingsDialogContent()
 
   $('#settings-history-combo').val(number_of_displayed_months);
   $('#settings-skin-combo').val(dark_theme ? "dark" : "light");
+}
+
+function injectCustomizeEntryDialogContent(id, category)
+{
+  var caption = "";
+
+  var categoryObjects = user_data.categories.filter(function(item){return item.category == category; });
+  if (categoryObjects != null)
+  {
+    var expenseObject = categoryObjects[0].expenses.filter(
+      function(item) 
+      { 
+        return (item !== null && item.id !== null && item.id == id); 
+      }
+    );
+    if (expenseObject != null)
+      caption = expenseObject[0].caption;
+  }
+
+  
+
+
+  var html = `
+      <p>
+        <input type="text" id="settings-expense-input-new-caption" value="` + caption + `">
+        <a class="validate-modal-dialog"  href="#" id="btn-rename-entry" data-dismiss="modal">rename</a>
+        &nbsp;&nbsp;or&nbsp;&nbsp;
+        <a class="validate-modal-dialog"  href="#" id="btn-delete-entry" data-dismiss="modal">delete</a>
+      </p>`;
+
+  $('#setting-dialog-content').html(html);
+
+  setTimeout(
+    function()
+    {
+      $('#btn-delete-entry').unbind().click( function() { removeExpense(id, category); validateSettings(); } );
+      $('#btn-rename-entry').unbind().click( function() { renameExpense(id); validateSettings();} );
+    },
+    100
+  );
+}
+
+function injectCustomizeCategoryDialogContent(category)
+{
+  var caption = "";
+  var categoryObjects = user_data.categories.filter(function(item){return item.category == category; });
+  if (categoryObjects != null)
+  {
+    caption = categoryObjects[0].caption;
+  }
+
+  var html = `
+      <p>
+        <input type="text" id="settings-category-input-new-caption" value="` + caption + `">
+        <a class="validate-modal-dialog"  href="#" id="btn-rename-category" data-dismiss="modal">rename</a>
+      </p>
+        <p>------------------&nbsp;&nbsp;or&nbsp;&nbsp------------------</p>
+      <p>
+        <input type="text" id="settings-new-expense-input-caption" value="new entry">
+        <a class="validate-modal-dialog"  href="#" id="btn-add-new-entry" data-dismiss="modal" >add</a>
+      </p>`;
+
+  $('#setting-dialog-content').html(html);
+
+  setTimeout(
+    function()
+    {
+      $('#btn-add-new-entry').unbind().click( function() { addExpense(category); validateSettings(); } );
+      $('#btn-rename-category').unbind().click( function() { renameCategory(category); validateSettings(); } );
+    },
+    100
+  );
 }

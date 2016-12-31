@@ -548,13 +548,14 @@ function generateExpenseChartData(currentContext, category)
           {
             amount += user_data.categories[i].expenses[j].monthlyTotals[current_displayed_month];
           }
-          caption += " (" + percentageAsString(amount, budgeted) + ")";
+          //caption += " (" +  + ")";
           if (amount > 0.1 || budgeted > 0.1)
           {
             chartData.push({
                 "caption": caption,
                 "amount": Math.floor(amount),
                 "budgeted": Math.floor(budgeted),
+                "percentage" : percentageAsString(amount, budgeted),
                 "color" : "#ff2655"
             });
           }
@@ -572,10 +573,12 @@ function generateExpenseChartData(currentContext, category)
           var budgeted = categoryObjects[0].expenses[i].monthlyProjection[current_displayed_month];
 
           var caption = categoryObjects[0].expenses[i].caption;
+          caption += " (" + percentageAsString(amount, budgeted) + ")";
           chartData.push({
               "caption": caption,
               "amount": Math.floor(amount),
               "budgeted": Math.floor(budgeted),
+              "percentage" : percentageAsString(amount, budgeted),
               "color" : "#ff2655"
           });     
         }
@@ -795,7 +798,7 @@ function categoryEntryHTML(category, caption)
 {
   var html = '';
 
-  html += '<li data-role="list-divider" class="'+ category +' category-' + category + '">' + caption + '</li>';
+  html += '<li data-role="list-divider" class="'+ category +' category-' + category + ' category-divider" data-category="' + category + '">' + caption + '</li>';
   html += '<li class="category-' + category + '"><hr></li>';
   html += '<li class="ui-expense-li category-' + category + ' ui-li-static ui-body-inherit">';
   html += '<div class="ui-expense-label-less-compact"></div>';
@@ -816,7 +819,7 @@ function expenseEntry(caption, frequency, budgetedAmount, expenseId, category)
     var html = '';
 
     html += '<li class="ui-expense-li category-' + category + '" id="' + expenseId + '">';
-    html += '<div class="ui-expense-label-less-compact" id="ui-expense-label' + expenseId + '">' + caption + '</div>';
+    html += '<div class="ui-expense-label-less-compact" id="ui-expense-label' + expenseId + '" data-expense="' + expenseId + '" data-category="' + category + '" >' + caption + '</div>';
     html += '<div class="frequency-combo-container-hidden">'; 
     html += expenseFrequencyCombo(frequency, expenseId, category);
     html += '</div>';
@@ -1387,8 +1390,33 @@ function applyTheme()
     if (theme != null && typeof(theme) != "undefined" && theme == "light")
     {
       dark_theme = false;
-      $('link[href="css/SpryTabbedPanels.css"]').attr('href','css/SpryTabbedPanels-bright.css');
       $('link[href="css/style-dark.css"]').attr('href','css/style-bright.css');
+      $('link[href="css/SpryTabbedPanels.css"]').attr('href','css/SpryTabbedPanels-bright.css');   
+    }
+  }
+}
+
+
+function tapholdEventHandler(evt)
+{
+  var target = $(evt.target);
+  if (target.is('div.ui-expense-label-less-compact') || target.is('div.ui-expense-label'))
+  {
+    var id = $(target).attr("data-expense");
+    var category = $(target).attr("data-category");
+    if (id !== null && typeof(id !== "undefined") && category !== null && typeof(category !== "undefined"))
+    {
+      injectCustomizeEntryDialogContent(id, category);
+      $('#setting-dialog').modal();
+    }
+  }
+  else if (target.is('li.category-divider')) 
+  {
+    var category = $(target).attr("data-category");
+    if (category !== null && typeof(category !== "undefined"))
+    {
+      injectCustomizeCategoryDialogContent(category);
+      $('#setting-dialog').modal();
     }
   }
 }
@@ -1450,14 +1478,12 @@ function postStart()
     
   }
 
-
-
   fillSpreadsheetWithValuesForMonth(getUTCCurrentMonth());
 
 
-  //$( ".expenses-list" ).listview( "refresh" );
-  //$( ".income-list" ).listview( "refresh" );
 
+  $( ".expenses-list" ).removeClass( "ui-screen-hidden" );
+  $( ".income-list" ).removeClass( "ui-screen-hidden" );
 /*
 
     expenseDonutChart = AmCharts.makeChart( "expenses-donut", {
@@ -1495,18 +1521,18 @@ function postStart()
           }],
           "startDuration": 1,
           "graphs": [{
-              "balloonText": "Expenses",
-              "fillAlphas": 0.6,
-              "lineAlpha": 0.2,
+              "balloonText": "Spent for « [[caption]] »: [[value]]$ i.e [[percentage]]",
+              "fillAlphas": 0.3,
+              "lineAlpha": 1,
               "title": "Expenses",
               "type": "column",
               "valueField": "amount",
               "startEffect": "easyOutSine",
               "lineColor" : getRandomColor()
           }, {
-              "balloonText": "Budgeted Prevision",
-              "fillAlphas": 0.6,
-              "lineAlpha": 0.2,
+              "balloonText": "Budgeted for « [[caption]] »: [[value]]$",
+              "fillAlphas": 1,
+              "lineAlpha": 1,
               "title": "Budgeted Prevision",
               "type": "column",
               "valueField": "budgeted",
@@ -1514,7 +1540,7 @@ function postStart()
               "lineColor" : getRandomColor()
           }
           ],
-          "plotAreaFillAlphas": 0.1,
+          "plotAreaFillAlphas": 0.2,
           "depth3D": 40,
           "angle": 30,
           "categoryField": "caption",
@@ -1664,8 +1690,8 @@ function postStart()
         "categoryAxis": {
           "gridPosition": "start",
           "gridColor": dark_theme ? "#FFFFFF" : "#000000",
-          "axisAlpha": 0,
-          "tickLength": 0,
+          "axisAlpha": 1,
+          "tickLength": 1,
           "labelRotation": 45,
           "color": dark_theme ? "#FFFFFF" : "#000000",
 
@@ -1736,6 +1762,9 @@ function postStart()
       setTimeout( function() { launchTutorial(); }, 3000);
     }
 
+
+    $( "body" ).bind( "taphold", tapholdEventHandler );
+
     
 }
 
@@ -1769,6 +1798,7 @@ function buddjetStart()
   if (pro_version)
   {
     setInterval(refreshCurrentPage, 180000);
+    setTimeout(refreshCurrentPage, 2000);
   }
 
   var title = sjcl.decrypt(app_id, localStorage.getItem(app_id + "." + session + ".fullid"));

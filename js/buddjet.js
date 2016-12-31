@@ -548,7 +548,7 @@ function generateExpenseChartData(currentContext, category)
           {
             amount += user_data.categories[i].expenses[j].monthlyTotals[current_displayed_month];
           }
-          //caption += " (" +  + ")";
+          
           if (amount > 0.1 || budgeted > 0.1)
           {
             chartData.push({
@@ -573,7 +573,6 @@ function generateExpenseChartData(currentContext, category)
           var budgeted = categoryObjects[0].expenses[i].monthlyProjection[current_displayed_month];
 
           var caption = categoryObjects[0].expenses[i].caption;
-          caption += " (" + percentageAsString(amount, budgeted) + ")";
           chartData.push({
               "caption": caption,
               "amount": Math.floor(amount),

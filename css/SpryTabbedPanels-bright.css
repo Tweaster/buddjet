@@ -75,6 +75,7 @@
 	border-left: solid 1px #999;
 	border-top: solid 1px #999;
 	border-right: solid 1px #999;
+	font-weight: medium;
 	
 	-moz-user-select: none;
 	-khtml-user-select: none;
@@ -85,7 +86,8 @@
 
 
 	font: 12px/14px 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color: #000;
+	font-weight: bold;
+	color: #fff;
     background: #bbb;
 
 	outline-color: #e1e1e1;
@@ -117,6 +119,7 @@
 	height: 16px;
 	background: #ddd;
     margin-bottom: -1px;
+    color: #222;
 
     border-bottom: solid 0px #ddd;
 
@@ -149,6 +152,7 @@
 .TabbedPanelsContentGroup {
 	clear: both;
 	font: 12px/14px 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: bold;
 	color: #111;
     margin: 0px;
     background-color: #ddd;

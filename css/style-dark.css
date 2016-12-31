@@ -925,7 +925,11 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
   background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
-  background-color: #f0ad4e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fabd5e), to(#d08d2e));
+    background: -moz-gradient(linear, left top, left bottom, from(#fabd5e), to(#d08d2e));
+    background: -o-gradient(linear, left top, left bottom, from(#fabd5e), to(#d08d2e));
+    background: -ms-gradient(linear, left top, left bottom, from(#fabd5e), to(#d08d2e));
+    background: gradient(linear, left top, left bottom, from(#fabd5e), to(#d08d2e));
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
@@ -933,11 +937,11 @@ background: gradient(linear, left top, left bottom, from(#333), to(#222));
   background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
 }
 .progress-bar-danger {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f9214f), to(#d9112f));
-    background: -moz-gradient(linear, left top, left bottom, from(#f9214f), to(#d9112f));
-    background: -o-gradient(linear, left top, left bottom, from(#f9214f), to(#d9112f));
-    background: -ms-gradient(linear, left top, left bottom, from(#f9214f), to(#d9112f));
-    background: gradient(linear, left top, left bottom, from(#f9214f), to(#d9112f));
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff315f), to(#c9011f));
+    background: -moz-gradient(linear, left top, left bottom, from(#ff315f), to(#c9011f));
+    background: -o-gradient(linear, left top, left bottom, from(#ff315f), to(#c9011f));
+    background: -ms-gradient(linear, left top, left bottom, from(#ff315f), to(#c9011f));
+    background: gradient(linear, left top, left bottom, from(#ff315f), to(#c9011f));
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);

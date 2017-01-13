@@ -1,6 +1,6 @@
 
 // declare global variables here
-var expenseDonutChart;
+var expenseDonhart;
 var balanceBarChart;
 var tendencyBarChart;
 
@@ -262,13 +262,13 @@ function applyChange(target, changeCmd)
 }
 
 
-function getUTCCurrentMonth()
+function getCurrentMonth()
 {
   var d = new Date();
-  return d.getUTCMonth();
+  return d.getMonth();
 }
 
-var current_displayed_month = getUTCCurrentMonth();
+var current_displayed_month = getCurrentMonth();
 
 
 
@@ -317,8 +317,8 @@ function compareExpense(a, b)
 function updateMonthsCombo()
 {
   var d = new Date();
-  var currentYear = d.getUTCFullYear();
-  var currentMonth = d.getUTCMonth();
+  var currentYear = d.getFullYear();
+  var currentMonth = d.getMonth();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   var html = `<option value="prevision">Budget Prevision</option>
@@ -342,8 +342,8 @@ function tendencyChartData(category)
   var chartData = [];
 
   var d = new Date();
-  var currentYear = d.getUTCFullYear();
-  var currentMonth = d.getUTCMonth();
+  var currentYear = d.getFullYear();
+  var currentMonth = d.getMonth();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   for (var i = 0; i < number_of_displayed_months; i++)
@@ -379,7 +379,7 @@ function tendencyChartData(category)
       caption += '(' + p + ')';
       chartData.push({
           "caption": caption,
-          "amount": amount,
+          "amount": Math.floor(amount),
           "budgeted": Math.floor(budgeted),
           "income" : Math.floor(income),
           "color" : "#ff2655",
@@ -464,7 +464,7 @@ function generateExpenseChartData(currentContext, category)
     {
       for (var i = 0; i < user_data.categories.length; i++)
       {
-        var amount = Math.floor(user_data.categories[i].monthlyProjection[getUTCCurrentMonth()]);
+        var amount = Math.floor(user_data.categories[i].monthlyProjection[getCurrentMonth()]);
         var caption = user_data.categories[i].caption;
         if (amount > 0.1 && user_data.categories[i].category != 'income')
         {
@@ -483,7 +483,7 @@ function generateExpenseChartData(currentContext, category)
         var categoryObjects = user_data.categories.filter(function(item){return item.category == category; });
         for (var i = 0; i < categoryObjects[0].expenses.length; i++)
         {
-          var amount = Math.floor(categoryObjects[0].expenses[i].monthlyProjection[getUTCCurrentMonth()]);
+          var amount = Math.floor(categoryObjects[0].expenses[i].monthlyProjection[getCurrentMonth()]);
             var caption = categoryObjects[0].expenses[i].caption;
             chartData.push({
                 "caption" : caption,
@@ -503,17 +503,17 @@ function generateExpenseChartData(currentContext, category)
           { 
             if (user_data.categories[i].category != 'income')
             {
-              expense += user_data.categories[i].expenses[j].monthlyProjection[getUTCCurrentMonth()];
+              expense += user_data.categories[i].expenses[j].monthlyProjection[getCurrentMonth()];
             }
             else
             {
-              income += user_data.categories[i].expenses[j].monthlyProjection[getUTCCurrentMonth()];
+              income += user_data.categories[i].expenses[j].monthlyProjection[getCurrentMonth()];
             }
           }
         }
-        income = Math.floor(income);
-        expense = Math.floor(expense);
-        var balance = income - expense;
+        income = Math.floor(income + 0.5);
+        expense = Math.floor(expense + 0.5);
+        var balance = Math.floor(income - expense);
         chartData.push({
             "caption": "Income (+" + income.toString() + "$)",
             "budgeted": income,
@@ -604,22 +604,24 @@ function generateExpenseChartData(currentContext, category)
             }
           }
         }
-        var balance = income - expense;
+        income = Math.floor(income + 0.5);
+        expense = Math.floor(expense + 0.5);
+        var balance = Math.floor(income - expense);
         chartData.push({
             "caption": "Income (+" + income.toString() + "$)",
-            "amount": Math.floor(income),
+            "amount": income,
             "budgeted": Math.floor(budgetedIncome),
             "color" : "#ff2655"
         });
         chartData.push({
             "caption": "Expense (-" + expense.toString() + "$)",
-            "amount": Math.floor(-expense),
+            "amount": -expense,
             "budgeted": Math.floor(-budgetedExpense),
             "color" : "#ff2655"
         });
         chartData.push({
             "caption": "Balance (" + balance.toString() + "$)",
-            "amount": Math.floor(balance),
+            "amount": balance,
             "budgeted": Math.floor(budgetedIncome - budgetedExpense),
             "color" : "#ff2655"
         });
@@ -653,8 +655,8 @@ function generateTendencyChartData()
 
 function updateChartsHandler(evt)
 {
-  //expenseDonutChart.dataProvider = generateBudgetedExpenseChartData();
-  //expenseDonutChart.validateData();
+  //expenseDonhart.dataProvider = generateBudgetedExpenseChartData();
+  //expenseDonhart.validateData();
 
   tendencyBarChart.dataProvider = generateTendencyChartData();
   tendencyBarChart.validateData();
@@ -1064,15 +1066,15 @@ function synchronizeWithServer(successCallbackFunc, failureCallbackFunc)
 function commitChangeLocaly(bCheckPendingCmdsNumber) 
 {
   var date = new Date();
-  var currentMonth = date.getUTCMonth();
-  user_data.lastCommit[0].year = date.getUTCFullYear();
+  var currentMonth = date.getMonth();
+  user_data.lastCommit[0].year = date.getFullYear();
   user_data.lastCommit[0].month = currentMonth;
-  user_data.lastCommit[0].date = date.getUTCDate();
-  user_data.lastCommit[0].hours = date.getUTCHours();
-  user_data.lastCommit[0].minutes = date.getUTCMinutes();
-  user_data.lastCommit[0].seconds = date.getUTCSeconds();
+  user_data.lastCommit[0].date = date.getDate();
+  user_data.lastCommit[0].hours = date.getHours();
+  user_data.lastCommit[0].minutes = date.getMinutes();
+  user_data.lastCommit[0].seconds = date.getSeconds();
 
-  var nextMonth = Number((date.getUTCMonth() + 1)) % 12;
+  var nextMonth = Number((date.getMonth() + 1)) % 12;
 
 
   for (var i = 0; i < user_data.categories.length; i++)
@@ -1282,7 +1284,7 @@ function boardSelectionChange()
     $('.ui-current-amount-hidden').toggleClass('ui-current-amount-hidden ui-current-amount');
     $('.ui-current-percentage-hidden').toggleClass('ui-current-percentage-hidden ui-current-percentage');
 
-    current_displayed_month = (getUTCCurrentMonth() - Number(selectedBoardLabel));
+    current_displayed_month = (getCurrentMonth() - Number(selectedBoardLabel));
     current_displayed_month = current_displayed_month < 0 ? current_displayed_month + 12 : current_displayed_month;
 
     fillSpreadsheetWithValuesForMonth(current_displayed_month);
@@ -1297,7 +1299,7 @@ function boardSelectionChange()
     $('.ui-current-amount').toggleClass('ui-current-amount ui-current-amount-hidden');
     $('.ui-current-percentage').toggleClass('ui-current-percentage ui-current-percentage-hidden');
 
-    current_displayed_month = getUTCCurrentMonth();
+    current_displayed_month = getCurrentMonth();
   }
 
   updateChartsHandler(null);
@@ -1398,26 +1400,36 @@ function applyTheme()
 
 function tapholdEventHandler(evt)
 {
-  var target = $(evt.target);
-  if (target.is('div.ui-expense-label-less-compact') || target.is('div.ui-expense-label'))
+  if (pro_version)
   {
-    var id = $(target).attr("data-expense");
-    var category = $(target).attr("data-category");
-    if (id !== null && typeof(id !== "undefined") && category !== null && typeof(category !== "undefined"))
+    var target = $(evt.target);
+    if (target.is('div.ui-expense-label-less-compact') || target.is('div.ui-expense-label'))
     {
-      injectCustomizeEntryDialogContent(id, category);
-      $('#setting-dialog').modal();
+      var id = $(target).attr("data-expense");
+      var category = $(target).attr("data-category");
+      if (id !== null && typeof(id !== "undefined") && category !== null && typeof(category !== "undefined"))
+      {
+        injectCustomizeEntryDialogContent(id, category);
+        $('#setting-dialog').modal();
+      }
+    }
+    else if (target.is('li.category-divider')) 
+    {
+      var category = $(target).attr("data-category");
+      if (category !== null && typeof(category !== "undefined"))
+      {
+        injectCustomizeCategoryDialogContent(category);
+        $('#setting-dialog').modal();
+      }
     }
   }
-  else if (target.is('li.category-divider')) 
-  {
-    var category = $(target).attr("data-category");
-    if (category !== null && typeof(category !== "undefined"))
-    {
-      injectCustomizeCategoryDialogContent(category);
-      $('#setting-dialog').modal();
-    }
-  }
+}
+
+
+function openSettingsDialog()
+{
+  injectSettingsDialogContent();
+  $('#setting-dialog').modal();
 }
 
 
@@ -1451,7 +1463,8 @@ function postStart()
 
     if (category != 'income')
     {
-      expensesHTML += categoryEntryHTML(category, caption);
+      if (user_data.categories[i].expenses.length !== 0)
+        expensesHTML += categoryEntryHTML(category, caption);
     }
     else
     {
@@ -1472,12 +1485,21 @@ function postStart()
       var expense = user_data.categories[i].expenses[j];
       expenseEntry(expense.caption , expense.frequency, expense.value, expense.id, category);
     }
-    $('.' + category + '-monthly-total').text(m.toString() + '$');
-    $('.' + category + '-yearly-total').text(y.toString() + '$');
+
+    if (user_data.categories[i].expenses.length !== 0)
+    {
+      $('.' + category + '-monthly-total').text(m.toString() + '$');
+      $('.' + category + '-yearly-total').text(y.toString() + '$');
+    }
+
+    if (user_data.categories[i].expenses.length === 0)
+    {
+      $($('#' + category + '-sidebar-entry').parent()).remove();
+    }
     
   }
 
-  fillSpreadsheetWithValuesForMonth(getUTCCurrentMonth());
+  fillSpreadsheetWithValuesForMonth(getCurrentMonth());
 
 
 
@@ -1485,7 +1507,7 @@ function postStart()
   $( ".income-list" ).removeClass( "ui-screen-hidden" );
 /*
 
-    expenseDonutChart = AmCharts.makeChart( "expenses-donut", {
+    expenseDonhart = AmCharts.makeChart( "expenses-donut", {
       "type": "pie",
       "theme": "dark",
       "titles": [ {
@@ -1512,6 +1534,7 @@ function postStart()
     balanceBarChart = AmCharts.makeChart("expenses-vs-prevision-barchart", {
           "theme": dark_theme ? "dark" : "light",
           "type": "serial",
+          "mouseWheelScrollEnabled": false,
           "valueAxes": [{
               "stackType": "3d",
               "unit": "$",
@@ -1598,6 +1621,7 @@ function postStart()
 
       tendencyBarChart = AmCharts.makeChart( "tendency-barchart", {
         "type": "serial",
+        "mouseWheelScrollEnabled": false,
         "addClassNames": true,
         "theme": dark_theme ? "dark" : "light",
         "autoMargins": true,
@@ -1644,10 +1668,11 @@ function postStart()
           "bulletColor": dark_theme ? "#FFFFFF" : "#000000",
           "useLineColorForBulletBorder": true,
           "bulletBorderThickness": 3,
-          "fillAlphas": 0,
+          "fillAlphas": 0.2,
           "lineAlpha": 1,
           "title": "Expenditure",
           "valueField": "amount",
+          "type": "smoothedLine",
           "startEffect": "easyOutSine",
           "dashLengthField": "dashLengthLine"
         },
@@ -1666,6 +1691,7 @@ function postStart()
           "title": "Income",
           "valueField": "income",
           "startEffect": "easyOutSine",
+          "type": "smoothedLine",
           "dashLengthField": "dashLengthLine"
         } ,
         {
@@ -1681,6 +1707,7 @@ function postStart()
           "fillAlphas": 0,
           "lineAlpha": 1,
           "title": "Budgeted Income",
+          "type": "smoothedLine",
           "valueField": "budgetedIncome",
           "startEffect": "easyOutSine",
           "dashLengthField": "dashLengthLine"
@@ -1746,6 +1773,7 @@ function postStart()
 
 
     $("#validate-new-amount-modal-dialog-btn").unbind().click( fetchEntryFromDialog);
+    $("#btn-settings").unbind().click( openSettingsDialog);
     $("#modal-dialog-input-amount").unbind().keydown( fetchEntryFromDialog);
 
     $("#tutorial-dialog").on('hidden.bs.modal', function () {

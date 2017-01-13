@@ -11,6 +11,24 @@ body  {
     */
 }
 
+*
+{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input
+{
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+}
+
 
 .ui-sidebar-entry {
     vertical-align: middle;
@@ -1239,9 +1257,7 @@ background: gradient(linear, left top, left bottom, from(#bbb), to(#888));
 }
 
 @media screen and (max-width: 1044px) {
-    .ui-sidebar-entry  {
-        width: 55px;
-    }
+    
 
     .ui-screen-hidden, .global-data-no-ui, .ui-loader {
         visibility: hidden;
@@ -1252,9 +1268,16 @@ background: gradient(linear, left top, left bottom, from(#bbb), to(#888));
 
     #sidebar1 {
         width: 95px;
-        -webkit-transition: all .2s;
-        -moz-transition: all .2s;
-        transition: all .2s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .5s;
+    }
+
+    #sidebar1:hover {
+        width: 260px;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .25;   
     }
 
     #middlecolumn {
@@ -1486,11 +1509,12 @@ background: gradient(linear, left top, left bottom, from(#bbb), to(#888));
         position: fixed;
         top: 50px;
         left: 140%;
-        background-color: #bdbdbd;
+        background-color: #000;
         width: 0px;
-        -webkit-transition: all .4s;
-        -moz-transition: all .4s;
-        transition: all .4s;
+        -webkit-transition: all .6s;
+        -moz-transition: all .6s;
+        transition: all .6s;
+        min-height: 100%;
     }
 
     .charts-mobile-on {
@@ -1500,10 +1524,11 @@ background: gradient(linear, left top, left bottom, from(#bbb), to(#888));
         left: 45px;
         width: 100%;
         overflow: hidden;
+        min-height: 100%;
         
-        -webkit-transition: all .4s;
-        -moz-transition: all .4s;
-        transition: all .4s;
+        -webkit-transition: all .6s;
+        -moz-transition: all .6s;
+        transition: all .6s;
     }
 
       

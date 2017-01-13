@@ -241,7 +241,7 @@ function addExpense(category)
 {
 
   var reloadDialogContent = false;
-  if (category === null  ||  typeof(category) === "undefined")
+  if (typeof(category) !== "string")
   {
     category = $('#settings-category-combo-add').val();
     reloadDialogContent = true;

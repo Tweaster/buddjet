@@ -23,7 +23,7 @@
 
 <script>
 
-    function onDeviceReady()
+    function onLogoutHTMLLoad()
     {
       if (typeof(Storage) !== "undefined") 
       {
@@ -40,7 +40,7 @@
 
     }
 
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", onLogoutHTMLLoad, false);
 
     $(document).ready(function() 
     {
@@ -54,7 +54,7 @@
 
         if( !window.isphone ) 
         {
-            onDeviceReady();
+            onLogoutHTMLLoad();
         }
     });
 

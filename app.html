@@ -3,6 +3,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="msapplication-tap-highlight" content="no" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<meta name="author" content="Fabrice Rasoamiaramanana">
+<meta name="description" content="Budget, plan and track your expenses as well as your incomes with Buddjet application by Fabrice Rasoamiaramanana">
+<meta name="keywords" content="buddjet,Fabrice Rasoamiaramanana,project furnace">
 
 <!--meta http-equiv="Cache-control" content="public">
 <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 20 Feb 2017 11:12:01 GMT"-->
@@ -10,7 +13,71 @@
 <link rel="shortcut icon" href="img/favicon.png"/>
 
 
-<title>Buddjet Demo Page</title>
+<title>Buddjet - By Fabrice Rasoamiaramanana</title>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Buddjet",
+    "author": "Fabrice Rasoamiaramanana",
+    "image": "http://buddjet.projectfurnace.org/website/img/business/dev_app.jpg",
+    "description": "Budget, plan and track your expenses as well as your incomes. Organize them in categories and get statistics about your expenditure vs budget performance as well as other significant metrics over the course of time.",
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "Free",
+        "availability": "http://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Project Furnace - by Fabrice Rasoamiaramanana"
+        }
+      },
+    "operatingSystem": ["ios", "android", "chrome", "firefox", "safari", "edge", "opera"],
+    "provider": {
+        "@type": "Organization",
+        "name": "Project Furnace - by Fabrice Rasoamiaramanana",
+        "sameAs": "http://buddjet.projectfurnace.org"
+    },
+    "applicationCategory" : "personal finance management tool",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "89"
+      }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Buddjet Pro",
+    "author": "Fabrice Rasoamiaramanana",
+    "image": "http://buddjet.projectfurnace.org/website/img/business/64/graph.png",
+    "description": "Budget, plan and track your expenses as well as your incomes. Organize them in categories and get statistics about your expenditure vs budget performance as well as other significant metrics over the course of time.",
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "1.99",
+        "availability": "http://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Project Furnace - by Fabrice Rasoamiaramanana"
+        }
+      },
+    "operatingSystem": ["ios", "android", "chrome", "firefox", "safari", "edge", "opera"],
+    "provider": {
+        "@type": "Organization",
+        "name": "Project Furnace - by Fabrice Rasoamiaramanana",
+        "sameAs": "http://buddjet.projectfurnace.org"
+    },
+    "applicationCategory" : "personal finance management tool",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "89"
+      }
+}
+</script>
 <style type="text/css">
 <!--
 
@@ -36,6 +103,7 @@
 <link rel="stylesheet" type="text/css" href="css/style-dark.css" />
 
 <!-- external scripts -->
+
 
 
 
@@ -65,7 +133,9 @@
 
 
 
-<!--script src="https://code.jquery.com/jquery-1.11.1.min.js" integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE=" crossorigin="anonymous"></script>
+<!--
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js" integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE=" crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 <script src="js/modal.js"></script>
@@ -82,16 +152,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.6/sjcl.min.js"></script>
 
 <script src="js/globals.js"></script>
-<script src="js/buddjet.js"></script-->
+<script src="js/buddjet.js"></script>
 
-
+-->
 
     
 
     <script>
 
 
-    function onDeviceReady()
+    function onAppHTMLLoad()
     {
 
       if (typeof(Storage) !== "undefined") 
@@ -120,7 +190,7 @@
     }
 
 
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", onAppHTMLLoad, false);
 
     $(document).ready(function() 
     {
@@ -134,7 +204,7 @@
 
         if( !window.isphone ) 
         {
-            onDeviceReady();
+            onAppHTMLLoad();
         }
     });
     
@@ -201,7 +271,7 @@
             </select>
 
             <div id="ui-btn-settings-container">
-              <a href="#" data-toggle="modal" data-target="#setting-dialog"><img src="img/settings.png"></a>
+              <a href="#" id="btn-settings"><img src="img/settings.png"></a>
             </div>
 
             <div id="ui-chart-switch-container">

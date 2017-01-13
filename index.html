@@ -28,7 +28,7 @@
 
 <script>
     
-    function onDeviceReady()
+    function onIndexHTMLLoad()
     {
       if (typeof(Storage) !== "undefined") 
       {
@@ -54,7 +54,7 @@
       
     }
 
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", onIndexHTMLLoad, false);
 
     $(document).ready(function() 
     {
@@ -68,7 +68,7 @@
 
         if( !window.isphone ) 
         {
-            onDeviceReady();
+            onIndexHTMLLoad();
         }
     });
     

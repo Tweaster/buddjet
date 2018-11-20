@@ -22,7 +22,7 @@
     <platform name="ios"/>
     <platform name="android"/>
     <platform name="winphone"/>
-    <preference name="phonegap-version" value="cli-6.5.0" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
